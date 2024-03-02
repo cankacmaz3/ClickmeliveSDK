@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,7 @@
 		36206E702B936E7900F76521 /* OnVideoUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E5D2B936E7900F76521 /* OnVideoUpdate.graphql */; };
 		36206E712B936E7900F76521 /* GetVideos.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E5E2B936E7900F76521 /* GetVideos.graphql */; };
 		36206E722B936E7900F76521 /* LikeLiveEvent.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E5F2B936E7900F76521 /* LikeLiveEvent.graphql */; };
+		36206E752B93702B00F76521 /* ClickmeliveSaasAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 36206E742B93702B00F76521 /* ClickmeliveSaasAPI */; };
 		3695F0382B935FFB003925F1 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F0372B935FFB003925F1 /* Apollo */; };
 		3695F03A2B935FFB003925F1 /* ApolloAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F0392B935FFB003925F1 /* ApolloAPI */; };
 		3695F03C2B935FFB003925F1 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F03B2B935FFB003925F1 /* ApolloWebSocket */; };
@@ -78,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36206E752B93702B00F76521 /* ClickmeliveSaasAPI in Frameworks */,
 				3695F03A2B935FFB003925F1 /* ApolloAPI in Frameworks */,
 				3695F03C2B935FFB003925F1 /* ApolloWebSocket in Frameworks */,
 				3695F0382B935FFB003925F1 /* Apollo in Frameworks */,
@@ -240,6 +242,7 @@
 				3695F0372B935FFB003925F1 /* Apollo */,
 				3695F0392B935FFB003925F1 /* ApolloAPI */,
 				3695F03B2B935FFB003925F1 /* ApolloWebSocket */,
+				36206E742B93702B00F76521 /* ClickmeliveSaasAPI */,
 			);
 			productName = Clickmelive;
 			productReference = 3695F01F2B935DDD003925F1 /* ClickmeliveCore.framework */;
@@ -292,6 +295,7 @@
 			mainGroup = 3695F0152B935DDD003925F1;
 			packageReferences = (
 				3695F0362B935FFB003925F1 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				36206E732B93702B00F76521 /* XCLocalSwiftPackageReference "ClickmeliveSaasAPI" */,
 			);
 			productRefGroup = 3695F0202B935DDD003925F1 /* Products */;
 			projectDirPath = "";
@@ -658,6 +662,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		36206E732B93702B00F76521 /* XCLocalSwiftPackageReference "ClickmeliveSaasAPI" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ClickmeliveSaasAPI;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		3695F0362B935FFB003925F1 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -670,6 +681,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		36206E742B93702B00F76521 /* ClickmeliveSaasAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ClickmeliveSaasAPI;
+		};
 		3695F0372B935FFB003925F1 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3695F0362B935FFB003925F1 /* XCRemoteSwiftPackageReference "apollo-ios" */;
