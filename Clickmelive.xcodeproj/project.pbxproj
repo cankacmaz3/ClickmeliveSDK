@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36206E492B936B7100F76521 /* GraphQLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36206E482B936B7100F76521 /* GraphQLClient.swift */; };
+		36206E4C2B936E5400F76521 /* schema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = 36206E4B2B936E5400F76521 /* schema.graphqls */; };
+		36206E602B936E7900F76521 /* OnLiveEventUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E4D2B936E7800F76521 /* OnLiveEventUpdate.graphql */; };
+		36206E612B936E7900F76521 /* GetEventItemsByLiveEventId.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E4E2B936E7800F76521 /* GetEventItemsByLiveEventId.graphql */; };
+		36206E622B936E7900F76521 /* OnCreateChatMessage.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E4F2B936E7800F76521 /* OnCreateChatMessage.graphql */; };
+		36206E632B936E7900F76521 /* IncreaseViewerVideo.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E502B936E7900F76521 /* IncreaseViewerVideo.graphql */; };
+		36206E642B936E7900F76521 /* GetUserInteractionForLiveEvent.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E512B936E7900F76521 /* GetUserInteractionForLiveEvent.graphql */; };
+		36206E652B936E7900F76521 /* CreateChatMessage.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E522B936E7900F76521 /* CreateChatMessage.graphql */; };
+		36206E662B936E7900F76521 /* GetVideoById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E532B936E7900F76521 /* GetVideoById.graphql */; };
+		36206E672B936E7900F76521 /* GetChatRoomContentByEventId.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E542B936E7900F76521 /* GetChatRoomContentByEventId.graphql */; };
+		36206E682B936E7900F76521 /* GetLiveEventById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E552B936E7900F76521 /* GetLiveEventById.graphql */; };
+		36206E692B936E7900F76521 /* GetLiveEvents.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E562B936E7900F76521 /* GetLiveEvents.graphql */; };
+		36206E6A2B936E7900F76521 /* OnVideoStatsChange.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E572B936E7900F76521 /* OnVideoStatsChange.graphql */; };
+		36206E6B2B936E7900F76521 /* IncreaseViewerLiveEvent.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E582B936E7900F76521 /* IncreaseViewerLiveEvent.graphql */; };
+		36206E6C2B936E7900F76521 /* LikeVideo.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E592B936E7900F76521 /* LikeVideo.graphql */; };
+		36206E6D2B936E7900F76521 /* GetLiveViewerCount.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E5A2B936E7900F76521 /* GetLiveViewerCount.graphql */; };
+		36206E6E2B936E7900F76521 /* GetUserInteractionForVideo.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E5B2B936E7900F76521 /* GetUserInteractionForVideo.graphql */; };
+		36206E6F2B936E7900F76521 /* OnLiveEventStatsChange.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E5C2B936E7900F76521 /* OnLiveEventStatsChange.graphql */; };
+		36206E702B936E7900F76521 /* OnVideoUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E5D2B936E7900F76521 /* OnVideoUpdate.graphql */; };
+		36206E712B936E7900F76521 /* GetVideos.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E5E2B936E7900F76521 /* GetVideos.graphql */; };
+		36206E722B936E7900F76521 /* LikeLiveEvent.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 36206E5F2B936E7900F76521 /* LikeLiveEvent.graphql */; };
 		3695F0382B935FFB003925F1 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F0372B935FFB003925F1 /* Apollo */; };
 		3695F03A2B935FFB003925F1 /* ApolloAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F0392B935FFB003925F1 /* ApolloAPI */; };
 		3695F03C2B935FFB003925F1 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F03B2B935FFB003925F1 /* ApolloWebSocket */; };
@@ -20,6 +41,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36206E482B936B7100F76521 /* GraphQLClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLClient.swift; sourceTree = "<group>"; };
+		36206E4B2B936E5400F76521 /* schema.graphqls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
+		36206E4D2B936E7800F76521 /* OnLiveEventUpdate.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OnLiveEventUpdate.graphql; sourceTree = "<group>"; };
+		36206E4E2B936E7800F76521 /* GetEventItemsByLiveEventId.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetEventItemsByLiveEventId.graphql; sourceTree = "<group>"; };
+		36206E4F2B936E7800F76521 /* OnCreateChatMessage.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OnCreateChatMessage.graphql; sourceTree = "<group>"; };
+		36206E502B936E7900F76521 /* IncreaseViewerVideo.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IncreaseViewerVideo.graphql; sourceTree = "<group>"; };
+		36206E512B936E7900F76521 /* GetUserInteractionForLiveEvent.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetUserInteractionForLiveEvent.graphql; sourceTree = "<group>"; };
+		36206E522B936E7900F76521 /* CreateChatMessage.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CreateChatMessage.graphql; sourceTree = "<group>"; };
+		36206E532B936E7900F76521 /* GetVideoById.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetVideoById.graphql; sourceTree = "<group>"; };
+		36206E542B936E7900F76521 /* GetChatRoomContentByEventId.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetChatRoomContentByEventId.graphql; sourceTree = "<group>"; };
+		36206E552B936E7900F76521 /* GetLiveEventById.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetLiveEventById.graphql; sourceTree = "<group>"; };
+		36206E562B936E7900F76521 /* GetLiveEvents.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetLiveEvents.graphql; sourceTree = "<group>"; };
+		36206E572B936E7900F76521 /* OnVideoStatsChange.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OnVideoStatsChange.graphql; sourceTree = "<group>"; };
+		36206E582B936E7900F76521 /* IncreaseViewerLiveEvent.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IncreaseViewerLiveEvent.graphql; sourceTree = "<group>"; };
+		36206E592B936E7900F76521 /* LikeVideo.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LikeVideo.graphql; sourceTree = "<group>"; };
+		36206E5A2B936E7900F76521 /* GetLiveViewerCount.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetLiveViewerCount.graphql; sourceTree = "<group>"; };
+		36206E5B2B936E7900F76521 /* GetUserInteractionForVideo.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetUserInteractionForVideo.graphql; sourceTree = "<group>"; };
+		36206E5C2B936E7900F76521 /* OnLiveEventStatsChange.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OnLiveEventStatsChange.graphql; sourceTree = "<group>"; };
+		36206E5D2B936E7900F76521 /* OnVideoUpdate.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OnVideoUpdate.graphql; sourceTree = "<group>"; };
+		36206E5E2B936E7900F76521 /* GetVideos.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetVideos.graphql; sourceTree = "<group>"; };
+		36206E5F2B936E7900F76521 /* LikeLiveEvent.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LikeLiveEvent.graphql; sourceTree = "<group>"; };
 		3695F01F2B935DDD003925F1 /* ClickmeliveCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ClickmeliveCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3695F02E2B935E62003925F1 /* ClickmeliveUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ClickmeliveUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3695F03D2B936027003925F1 /* CMLApolloClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLApolloClient.swift; sourceTree = "<group>"; };
@@ -52,11 +94,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36206E472B936B3500F76521 /* SDK Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "SDK Interfaces";
+			sourceTree = "<group>";
+		};
+		36206E4A2B936E5400F76521 /* graphql */ = {
+			isa = PBXGroup;
+			children = (
+				36206E4B2B936E5400F76521 /* schema.graphqls */,
+				36206E522B936E7900F76521 /* CreateChatMessage.graphql */,
+				36206E542B936E7900F76521 /* GetChatRoomContentByEventId.graphql */,
+				36206E4E2B936E7800F76521 /* GetEventItemsByLiveEventId.graphql */,
+				36206E552B936E7900F76521 /* GetLiveEventById.graphql */,
+				36206E562B936E7900F76521 /* GetLiveEvents.graphql */,
+				36206E5A2B936E7900F76521 /* GetLiveViewerCount.graphql */,
+				36206E512B936E7900F76521 /* GetUserInteractionForLiveEvent.graphql */,
+				36206E5B2B936E7900F76521 /* GetUserInteractionForVideo.graphql */,
+				36206E532B936E7900F76521 /* GetVideoById.graphql */,
+				36206E5E2B936E7900F76521 /* GetVideos.graphql */,
+				36206E582B936E7900F76521 /* IncreaseViewerLiveEvent.graphql */,
+				36206E502B936E7900F76521 /* IncreaseViewerVideo.graphql */,
+				36206E5F2B936E7900F76521 /* LikeLiveEvent.graphql */,
+				36206E592B936E7900F76521 /* LikeVideo.graphql */,
+				36206E4F2B936E7800F76521 /* OnCreateChatMessage.graphql */,
+				36206E5C2B936E7900F76521 /* OnLiveEventStatsChange.graphql */,
+				36206E4D2B936E7800F76521 /* OnLiveEventUpdate.graphql */,
+				36206E572B936E7900F76521 /* OnVideoStatsChange.graphql */,
+				36206E5D2B936E7900F76521 /* OnVideoUpdate.graphql */,
+			);
+			path = graphql;
+			sourceTree = "<group>";
+		};
 		3695F0152B935DDD003925F1 = {
 			isa = PBXGroup;
 			children = (
 				3695F0212B935DDD003925F1 /* ClickmeliveCore */,
 				3695F02F2B935E62003925F1 /* ClickmeliveUI */,
+				36206E4A2B936E5400F76521 /* graphql */,
 				3695F0202B935DDD003925F1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,6 +161,7 @@
 		3695F02F2B935E62003925F1 /* ClickmeliveUI */ = {
 			isa = PBXGroup;
 			children = (
+				36206E472B936B3500F76521 /* SDK Interfaces */,
 			);
 			path = ClickmeliveUI;
 			sourceTree = "<group>";
@@ -92,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				3695F03D2B936027003925F1 /* CMLApolloClient.swift */,
+				36206E482B936B7100F76521 /* GraphQLClient.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -229,6 +308,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36206E662B936E7900F76521 /* GetVideoById.graphql in Resources */,
+				36206E672B936E7900F76521 /* GetChatRoomContentByEventId.graphql in Resources */,
+				36206E612B936E7900F76521 /* GetEventItemsByLiveEventId.graphql in Resources */,
+				36206E702B936E7900F76521 /* OnVideoUpdate.graphql in Resources */,
+				36206E602B936E7900F76521 /* OnLiveEventUpdate.graphql in Resources */,
+				36206E6C2B936E7900F76521 /* LikeVideo.graphql in Resources */,
+				36206E6D2B936E7900F76521 /* GetLiveViewerCount.graphql in Resources */,
+				36206E6A2B936E7900F76521 /* OnVideoStatsChange.graphql in Resources */,
+				36206E622B936E7900F76521 /* OnCreateChatMessage.graphql in Resources */,
+				36206E6F2B936E7900F76521 /* OnLiveEventStatsChange.graphql in Resources */,
+				36206E652B936E7900F76521 /* CreateChatMessage.graphql in Resources */,
+				36206E642B936E7900F76521 /* GetUserInteractionForLiveEvent.graphql in Resources */,
+				36206E692B936E7900F76521 /* GetLiveEvents.graphql in Resources */,
+				36206E722B936E7900F76521 /* LikeLiveEvent.graphql in Resources */,
+				36206E682B936E7900F76521 /* GetLiveEventById.graphql in Resources */,
+				36206E6E2B936E7900F76521 /* GetUserInteractionForVideo.graphql in Resources */,
+				36206E6B2B936E7900F76521 /* IncreaseViewerLiveEvent.graphql in Resources */,
+				36206E632B936E7900F76521 /* IncreaseViewerVideo.graphql in Resources */,
+				36206E712B936E7900F76521 /* GetVideos.graphql in Resources */,
+				36206E4C2B936E5400F76521 /* schema.graphqls in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +349,7 @@
 				3695F0412B936072003925F1 /* AuthorizationInterceptor.swift in Sources */,
 				3695F04B2B936133003925F1 /* CML.swift in Sources */,
 				3695F0482B936104003925F1 /* CMLConstants.swift in Sources */,
+				36206E492B936B7100F76521 /* GraphQLClient.swift in Sources */,
 				3695F04D2B936143003925F1 /* CMLOptions.swift in Sources */,
 				3695F0452B936097003925F1 /* NetworkInterceptorProvider.swift in Sources */,
 				3695F0432B93607E003925F1 /* AppSyncRequestBodyCreator.swift in Sources */,

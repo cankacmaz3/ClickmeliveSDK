@@ -1,0 +1,24 @@
+mutation LikeLiveEvent($liveEventId: ID!, $userId: ID!, $like: Boolean!) {
+  likeLiveEvent(liveEventId: $liveEventId, userId: $userId, like: $like) {
+    id
+    status
+    type
+    title
+    userId
+    description
+    tags
+    items
+    thumbnailUrl
+    replayUrl
+    teaserUrl
+    playbackUrl
+    isActive
+    totalLikeCount
+    estimatedStartingDate
+    startingDate
+    endingDate
+    createdAt
+    updatedAt
+    totalViewer
+  }
+}

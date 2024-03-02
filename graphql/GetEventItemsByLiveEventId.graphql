@@ -1,0 +1,12 @@
+query GetEventItemsByLiveEventId($id: ID!) {
+  getEventItemsByLiveEventId(id: $id) {
+    id
+    externalId
+    name
+    description
+    price
+    discountedPrice
+    deeplinkUrl
+    imageUrl
+  }
+}

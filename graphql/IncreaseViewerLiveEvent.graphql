@@ -1,0 +1,24 @@
+mutation IncreaseViewerLiveEvent($id: ID!, $userId: ID!) {
+  increaseViewerLiveEvent(id: $id, userId: $userId) {
+    id
+    status
+    type
+    title
+    userId
+    description
+    tags
+    items
+    thumbnailUrl
+    replayUrl
+    teaserUrl
+    playbackUrl
+    isActive
+    totalLikeCount
+    estimatedStartingDate
+    startingDate
+    endingDate
+    createdAt
+    updatedAt
+    totalViewer
+  }
+}

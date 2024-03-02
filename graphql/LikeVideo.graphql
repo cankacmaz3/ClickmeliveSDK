@@ -1,0 +1,17 @@
+mutation LikeVideo($videoId: ID!, $userId: ID!, $like: Boolean!) {
+  likeVideo(videoId: $videoId, userId: $userId, like: $like) {
+    id
+    title
+    description
+    userId
+    tags
+    items
+    thumbnailUrl
+    videoUrl
+    isActive
+    totalLikeCount
+    createdAt
+    updatedAt
+    totalViewer
+  }
+}

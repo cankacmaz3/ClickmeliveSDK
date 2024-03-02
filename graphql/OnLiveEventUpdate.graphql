@@ -1,0 +1,24 @@
+subscription OnLiveEventUpdate($id: ID!) {
+  onLiveEventUpdate(id: $id) {
+    id
+    status
+    type
+    title
+    userId
+    description
+    tags
+    items
+    thumbnailUrl
+    replayUrl
+    teaserUrl
+    playbackUrl
+    isActive
+    totalLikeCount
+    estimatedStartingDate
+    startingDate
+    endingDate
+    createdAt
+    updatedAt
+    totalViewer
+  }
+}
