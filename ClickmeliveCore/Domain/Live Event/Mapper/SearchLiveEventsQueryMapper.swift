@@ -8,7 +8,7 @@
 import Foundation
 import ClickmeliveSaasAPI
 
-struct SearchLiveEventsMapper {
+struct SearchLiveEventsQueryMapper {
     static func map(data: SearchLiveEventsQuery.Data?) -> Result<[LiveEvent], Error> {
         guard let data = data else {
             return .failure(GraphQLMapperError.noDataReceived)

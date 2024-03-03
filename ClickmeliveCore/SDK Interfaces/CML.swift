@@ -37,3 +37,10 @@ extension CML {
         liveEventFinder.find(params: params, completion: completion)
     }
 }
+
+extension CML {
+    public static func loadVideos(params: CMLVideosQuery.Params, completion: @escaping (Result<[Video], Error>) -> Void) {
+        let videoFinder = GraphQLVideoFinder(apolloClient: CMLApolloClient.shared.apollo)
+        videoFinder.find(params: params, completion: completion)
+    }
+}

@@ -17,6 +17,6 @@ final class GraphQLLiveEventFinder: GraphQLClient, LiveEventFinder {
             limit: GraphQLNullable(optionalValue: params.getLimit()),
             page: GraphQLNullable(optionalValue: params.getPage()))
         
-        perform(query: SearchLiveEventsQuery(input: input), mapper: SearchLiveEventsMapper.map, completion: completion)
+        perform(query: SearchLiveEventsQuery(input: input), mapper: SearchLiveEventsQueryMapper.map, completion: completion)
     }
 }

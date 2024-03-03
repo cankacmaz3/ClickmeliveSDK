@@ -59,7 +59,7 @@
 		366D0BA52B94802200A42E2B /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BA42B94802200A42E2B /* FontManager.swift */; };
 		366D0BA72B94804000A42E2B /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BA62B94804000A42E2B /* ItemCell.swift */; };
 		366D0BA92B94809500A42E2B /* SharedIOSModuleBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BA82B94809500A42E2B /* SharedIOSModuleBundle.swift */; };
-		366D0BAF2B9493AB00A42E2B /* SearchLiveEventsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BAE2B9493AB00A42E2B /* SearchLiveEventsMapper.swift */; };
+		366D0BAF2B9493AB00A42E2B /* SearchLiveEventsQueryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BAE2B9493AB00A42E2B /* SearchLiveEventsQueryMapper.swift */; };
 		366D0BB22B94945F00A42E2B /* GraphQLLiveEventFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BB12B94945F00A42E2B /* GraphQLLiveEventFinder.swift */; };
 		366D0BB42B9494D200A42E2B /* LiveEventFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BB32B9494D200A42E2B /* LiveEventFinder.swift */; };
 		366D0BBE2B94CB9500A42E2B /* ChatBanGQL.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BBD2B94CB9500A42E2B /* ChatBanGQL.graphql */; };
@@ -100,6 +100,12 @@
 		366D0C052B95276B00A42E2B /* EventItemGQL+DomainConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C042B95276B00A42E2B /* EventItemGQL+DomainConversion.swift */; };
 		366D0C092B9536AA00A42E2B /* CMLLiveEventsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C082B9536AA00A42E2B /* CMLLiveEventsQuery.swift */; };
 		366D0C0C2B9536E300A42E2B /* GraphQLNullable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C0B2B9536E300A42E2B /* GraphQLNullable+Extensions.swift */; };
+		366D0C152B953FD900A42E2B /* SearchVideosQueryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C142B953FD900A42E2B /* SearchVideosQueryMapper.swift */; };
+		366D0C182B95405300A42E2B /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C172B95405300A42E2B /* Video.swift */; };
+		366D0C1B2B9540DB00A42E2B /* VideoGQL+DomainConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C1A2B9540DB00A42E2B /* VideoGQL+DomainConversion.swift */; };
+		366D0C1F2B9541BA00A42E2B /* VideoFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C1E2B9541BA00A42E2B /* VideoFinder.swift */; };
+		366D0C212B95421300A42E2B /* CMLVideosQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C202B95421300A42E2B /* CMLVideosQuery.swift */; };
+		366D0C232B95426F00A42E2B /* GraphQLVideoFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C222B95426F00A42E2B /* GraphQLVideoFinder.swift */; };
 		3695F0382B935FFB003925F1 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F0372B935FFB003925F1 /* Apollo */; };
 		3695F03A2B935FFB003925F1 /* ApolloAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F0392B935FFB003925F1 /* ApolloAPI */; };
 		3695F03C2B935FFB003925F1 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F03B2B935FFB003925F1 /* ApolloWebSocket */; };
@@ -174,7 +180,7 @@
 		366D0BA42B94802200A42E2B /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		366D0BA62B94804000A42E2B /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		366D0BA82B94809500A42E2B /* SharedIOSModuleBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIOSModuleBundle.swift; sourceTree = "<group>"; };
-		366D0BAE2B9493AB00A42E2B /* SearchLiveEventsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLiveEventsMapper.swift; sourceTree = "<group>"; };
+		366D0BAE2B9493AB00A42E2B /* SearchLiveEventsQueryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLiveEventsQueryMapper.swift; sourceTree = "<group>"; };
 		366D0BB12B94945F00A42E2B /* GraphQLLiveEventFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLLiveEventFinder.swift; sourceTree = "<group>"; };
 		366D0BB32B9494D200A42E2B /* LiveEventFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventFinder.swift; sourceTree = "<group>"; };
 		366D0BBD2B94CB9500A42E2B /* ChatBanGQL.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ChatBanGQL.graphql; sourceTree = "<group>"; };
@@ -215,6 +221,12 @@
 		366D0C042B95276B00A42E2B /* EventItemGQL+DomainConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventItemGQL+DomainConversion.swift"; sourceTree = "<group>"; };
 		366D0C082B9536AA00A42E2B /* CMLLiveEventsQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLLiveEventsQuery.swift; sourceTree = "<group>"; };
 		366D0C0B2B9536E300A42E2B /* GraphQLNullable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GraphQLNullable+Extensions.swift"; sourceTree = "<group>"; };
+		366D0C142B953FD900A42E2B /* SearchVideosQueryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVideosQueryMapper.swift; sourceTree = "<group>"; };
+		366D0C172B95405300A42E2B /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		366D0C1A2B9540DB00A42E2B /* VideoGQL+DomainConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoGQL+DomainConversion.swift"; sourceTree = "<group>"; };
+		366D0C1E2B9541BA00A42E2B /* VideoFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFinder.swift; sourceTree = "<group>"; };
+		366D0C202B95421300A42E2B /* CMLVideosQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLVideosQuery.swift; sourceTree = "<group>"; };
+		366D0C222B95426F00A42E2B /* GraphQLVideoFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLVideoFinder.swift; sourceTree = "<group>"; };
 		3695F01F2B935DDD003925F1 /* ClickmeliveCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ClickmeliveCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3695F02E2B935E62003925F1 /* ClickmeliveUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ClickmeliveUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3695F03D2B936027003925F1 /* CMLApolloClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLApolloClient.swift; sourceTree = "<group>"; };
@@ -304,6 +316,7 @@
 				366D0B112B93757600A42E2B /* Item */,
 				366D0B042B93742A00A42E2B /* Live Event */,
 				366D0B0D2B93754200A42E2B /* Tag */,
+				366D0C122B953F4600A42E2B /* Video */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -536,7 +549,7 @@
 				366D0B1F2B938DE100A42E2B /* OnLiveEventStatsChangeSubscriptionMapper.swift */,
 				366D0B272B938FAB00A42E2B /* OnLiveEventUpdateSubscriptionMapper.swift */,
 				366D0B292B93902500A42E2B /* GetLiveViewerCountQueryMapper.swift */,
-				366D0BAE2B9493AB00A42E2B /* SearchLiveEventsMapper.swift */,
+				366D0BAE2B9493AB00A42E2B /* SearchLiveEventsQueryMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -564,6 +577,58 @@
 			children = (
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		366D0C122B953F4600A42E2B /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				366D0C1C2B95417A00A42E2B /* API */,
+				366D0C192B9540C700A42E2B /* Extensions */,
+				366D0C162B95404400A42E2B /* Feature */,
+				366D0C132B953FAE00A42E2B /* Mapper */,
+				366D0C1D2B95418B00A42E2B /* Model */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		366D0C132B953FAE00A42E2B /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				366D0C142B953FD900A42E2B /* SearchVideosQueryMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		366D0C162B95404400A42E2B /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				366D0C1E2B9541BA00A42E2B /* VideoFinder.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		366D0C192B9540C700A42E2B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				366D0C1A2B9540DB00A42E2B /* VideoGQL+DomainConversion.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		366D0C1C2B95417A00A42E2B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				366D0C222B95426F00A42E2B /* GraphQLVideoFinder.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		366D0C1D2B95418B00A42E2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				366D0C172B95405300A42E2B /* Video.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3695F0152B935DDD003925F1 = {
@@ -648,6 +713,7 @@
 				3695F04A2B936133003925F1 /* CML.swift */,
 				3695F04C2B936143003925F1 /* CMLOptions.swift */,
 				366D0C082B9536AA00A42E2B /* CMLLiveEventsQuery.swift */,
+				366D0C202B95421300A42E2B /* CMLVideosQuery.swift */,
 			);
 			path = "SDK Interfaces";
 			sourceTree = "<group>";
@@ -824,23 +890,29 @@
 				3695F03E2B936027003925F1 /* CMLApolloClient.swift in Sources */,
 				366D0B0C2B93752900A42E2B /* LiveEventStatus.swift in Sources */,
 				366D0BB42B9494D200A42E2B /* LiveEventFinder.swift in Sources */,
-				366D0BAF2B9493AB00A42E2B /* SearchLiveEventsMapper.swift in Sources */,
+				366D0BAF2B9493AB00A42E2B /* SearchLiveEventsQueryMapper.swift in Sources */,
 				3695F0412B936072003925F1 /* AuthorizationInterceptor.swift in Sources */,
 				3695F04B2B936133003925F1 /* CML.swift in Sources */,
 				366D0B312B93927300A42E2B /* LiveEventDetailLoader.swift in Sources */,
 				3695F0482B936104003925F1 /* CMLConstants.swift in Sources */,
+				366D0C152B953FD900A42E2B /* SearchVideosQueryMapper.swift in Sources */,
 				366D0B202B938DE100A42E2B /* OnLiveEventStatsChangeSubscriptionMapper.swift in Sources */,
 				366D0B0A2B93750700A42E2B /* LiveEvent.swift in Sources */,
+				366D0C232B95426F00A42E2B /* GraphQLVideoFinder.swift in Sources */,
+				366D0C212B95421300A42E2B /* CMLVideosQuery.swift in Sources */,
+				366D0C182B95405300A42E2B /* Video.swift in Sources */,
 				366D0C012B9526B700A42E2B /* LiveEventGQL+DomainConversion.swift in Sources */,
 				366D0B2A2B93902500A42E2B /* GetLiveViewerCountQueryMapper.swift in Sources */,
 				366D0B3B2B93930700A42E2B /* LiveEventViewerIncreaser.swift in Sources */,
 				366D0B142B93759100A42E2B /* Item.swift in Sources */,
 				366D0B7B2B947D0B00A42E2B /* ItemViewModel.swift in Sources */,
+				366D0C1B2B9540DB00A42E2B /* VideoGQL+DomainConversion.swift in Sources */,
 				366D0B1A2B9377F700A42E2B /* GetLiveEventByIdQueryMapper.swift in Sources */,
 				366D0C032B95270500A42E2B /* EventTagGQL+DomainConversion.swift in Sources */,
 				366D0B3F2B93933B00A42E2B /* LiveEventUpdateListener.swift in Sources */,
 				366D0B1C2B9389BE00A42E2B /* LikeLiveEventMutationMapper.swift in Sources */,
 				366D0C052B95276B00A42E2B /* EventItemGQL+DomainConversion.swift in Sources */,
+				366D0C1F2B9541BA00A42E2B /* VideoFinder.swift in Sources */,
 				366D0B222B938E6000A42E2B /* GetUserInteractionForLiveEventQueryMapper.swift in Sources */,
 				366D0C092B9536AA00A42E2B /* CMLLiveEventsQuery.swift in Sources */,
 				366D0B2F2B93913900A42E2B /* LiveEventLoader.swift in Sources */,
