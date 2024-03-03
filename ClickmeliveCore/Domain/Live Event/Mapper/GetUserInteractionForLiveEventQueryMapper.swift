@@ -8,7 +8,7 @@
 import ClickmeliveSaasAPI
 
 struct GetUserInteractionForLiveEventQueryMapper {
-    static func map(data: GetUserInteractionForLiveEventQuery.Data?) -> Result<LiveEventUserInteraction, Error> {
+    static func map(data: GetUserInteractionLiveEventQuery.Data?) -> Result<LiveEventUserInteraction, Error> {
         guard let data = data else {
             return .failure(GraphQLMapperError.noDataReceived)
         }

@@ -7,7 +7,7 @@ public class GetUserInteractionForVideoQuery: GraphQLQuery {
   public static let operationName: String = "GetUserInteractionForVideo"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query GetUserInteractionForVideo($id: ID!, $userId: ID!) { getUserInteractionForVideo(id: $id, userId: $userId) { __typename userId videoId like } }"#
+      #"query GetUserInteractionForVideo($id: ID!, $userId: ID!) { getUserInteractionForVideo(id: $id, userId: $userId) { __typename like videoId userId } }"#
     ))
 
   public var id: ID
@@ -51,17 +51,17 @@ public class GetUserInteractionForVideoQuery: GraphQLQuery {
       public static var __parentType: ApolloAPI.ParentType { ClickmeliveSaasAPI.Objects.VideoUserInteraction }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("userId", ClickmeliveSaasAPI.ID.self),
-        .field("videoId", ClickmeliveSaasAPI.ID.self),
         .field("like", Bool?.self),
+        .field("videoId", ClickmeliveSaasAPI.ID.self),
+        .field("userId", ClickmeliveSaasAPI.ID.self),
       ] }
 
-      ///  Id of the user.
-      public var userId: ClickmeliveSaasAPI.ID { __data["userId"] }
-      ///  Id of the video.
-      public var videoId: ClickmeliveSaasAPI.ID { __data["videoId"] }
       ///  Like status of the user for the video.
       public var like: Bool? { __data["like"] }
+      ///  Id of the video.
+      public var videoId: ClickmeliveSaasAPI.ID { __data["videoId"] }
+      ///  Id of the user.
+      public var userId: ClickmeliveSaasAPI.ID { __data["userId"] }
     }
   }
 }

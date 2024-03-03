@@ -1,17 +1,5 @@
 mutation IncreaseViewerVideo($id: ID!, $userId: ID!) {
-  increaseViewerVideo(id: $id, userId: $userId) {
-    id
-    title
-    description
-    userId
-    tags
-    items
-    thumbnailUrl
-    videoUrl
-    isActive
-    totalLikeCount
-    createdAt
-    updatedAt
-    totalViewer
-  }
+    increaseViewerVideo(id: $id, userId: $userId) {
+        ...VideoGQL
+    }
 }

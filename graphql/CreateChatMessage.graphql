@@ -1,16 +1,5 @@
-mutation CreateChatMessage($userId: ID!, $eventId: ID!, $userDisplayName: String!, $message: String!) {
-  createChatMessage(input: {
-    userId: $userId,
-    eventId: $eventId,
-    userDisplayName: $userDisplayName,
-    message: $message
-  }) {
-    id
-    eventId
-    userId
-    userDisplayName
-    message
-    createdAt
-  }
+mutation CreateChatMessage($input: ChatMessageInput!) {
+    createChatMessage(input: $input) {
+        ...ChatMessageGQL
+    }
 }
-

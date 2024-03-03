@@ -7,7 +7,8 @@ public class OnCreateChatMessageSubscription: GraphQLSubscription {
   public static let operationName: String = "OnCreateChatMessage"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"subscription OnCreateChatMessage($eventId: ID!) { onCreateChatMessage(eventId: $eventId) { __typename id eventId userId userDisplayName message createdAt } }"#
+      #"subscription OnCreateChatMessage($eventId: ID!) { onCreateChatMessage(eventId: $eventId) { __typename ...ChatMessageGQL } }"#,
+      fragments: [ChatMessageGQL.self]
     ))
 
   public var eventId: ID
@@ -40,12 +41,7 @@ public class OnCreateChatMessageSubscription: GraphQLSubscription {
       public static var __parentType: ApolloAPI.ParentType { ClickmeliveSaasAPI.Objects.ChatMessage }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("id", ClickmeliveSaasAPI.ID.self),
-        .field("eventId", ClickmeliveSaasAPI.ID.self),
-        .field("userId", String.self),
-        .field("userDisplayName", String.self),
-        .field("message", String.self),
-        .field("createdAt", ClickmeliveSaasAPI.AWSDateTime.self),
+        .fragment(ChatMessageGQL.self),
       ] }
 
       ///  Id of the chat message.
@@ -60,6 +56,13 @@ public class OnCreateChatMessageSubscription: GraphQLSubscription {
       public var message: String { __data["message"] }
       ///  Created at date of the chat message.
       public var createdAt: ClickmeliveSaasAPI.AWSDateTime { __data["createdAt"] }
+
+      public struct Fragments: FragmentContainer {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public var chatMessageGQL: ChatMessageGQL { _toFragment() }
+      }
     }
   }
 }

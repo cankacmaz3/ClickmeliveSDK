@@ -7,10 +7,25 @@ public class GetVideosQuery: GraphQLQuery {
   public static let operationName: String = "GetVideos"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query GetVideos { getVideos { __typename nextToken videos { __typename id title description userId tags items thumbnailUrl videoUrl isActive totalLikeCount createdAt updatedAt totalViewer } } }"#
+      #"query GetVideos($limit: Int, $nextToken: String) { getVideos(limit: $limit, nextToken: $nextToken) { __typename nextToken videos { __typename ...VideoGQL tags items } } }"#,
+      fragments: [VideoGQL.self]
     ))
 
-  public init() {}
+  public var limit: GraphQLNullable<Int>
+  public var nextToken: GraphQLNullable<String>
+
+  public init(
+    limit: GraphQLNullable<Int>,
+    nextToken: GraphQLNullable<String>
+  ) {
+    self.limit = limit
+    self.nextToken = nextToken
+  }
+
+  public var __variables: Variables? { [
+    "limit": limit,
+    "nextToken": nextToken
+  ] }
 
   public struct Data: ClickmeliveSaasAPI.SelectionSet {
     public let __data: DataDict
@@ -18,7 +33,10 @@ public class GetVideosQuery: GraphQLQuery {
 
     public static var __parentType: ApolloAPI.ParentType { ClickmeliveSaasAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
-      .field("getVideos", GetVideos?.self),
+      .field("getVideos", GetVideos?.self, arguments: [
+        "limit": .variable("limit"),
+        "nextToken": .variable("nextToken")
+      ]),
     ] }
 
     ///  Get Videos with pagination from DynamoDB(Will not be used for now, you can use searchVideos).
@@ -53,21 +71,15 @@ public class GetVideosQuery: GraphQLQuery {
         public static var __parentType: ApolloAPI.ParentType { ClickmeliveSaasAPI.Objects.Video }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("id", ClickmeliveSaasAPI.ID.self),
-          .field("title", String.self),
-          .field("description", String?.self),
-          .field("userId", String.self),
           .field("tags", [String?]?.self),
           .field("items", [String?]?.self),
-          .field("thumbnailUrl", String.self),
-          .field("videoUrl", String.self),
-          .field("isActive", Bool.self),
-          .field("totalLikeCount", Int.self),
-          .field("createdAt", ClickmeliveSaasAPI.AWSDateTime.self),
-          .field("updatedAt", ClickmeliveSaasAPI.AWSDateTime.self),
-          .field("totalViewer", Int.self),
+          .fragment(VideoGQL.self),
         ] }
 
+        ///  Tag ids of the video.
+        public var tags: [String?]? { __data["tags"] }
+        ///  Event item ids of the video.
+        public var items: [String?]? { __data["items"] }
         ///  Id of the video.
         public var id: ClickmeliveSaasAPI.ID { __data["id"] }
         ///  Title of the video.
@@ -76,10 +88,6 @@ public class GetVideosQuery: GraphQLQuery {
         public var description: String? { __data["description"] }
         ///  The user id of the video creator.
         public var userId: String { __data["userId"] }
-        ///  Tag ids of the video.
-        public var tags: [String?]? { __data["tags"] }
-        ///  Event item ids of the video.
-        public var items: [String?]? { __data["items"] }
         ///  Thumbnail url of the video.
         public var thumbnailUrl: String { __data["thumbnailUrl"] }
         ///  Video url of the video.
@@ -94,6 +102,13 @@ public class GetVideosQuery: GraphQLQuery {
         public var updatedAt: ClickmeliveSaasAPI.AWSDateTime { __data["updatedAt"] }
         ///  Total viewer count of the video.
         public var totalViewer: Int { __data["totalViewer"] }
+
+        public struct Fragments: FragmentContainer {
+          public let __data: DataDict
+          public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public var videoGQL: VideoGQL { _toFragment() }
+        }
       }
     }
   }

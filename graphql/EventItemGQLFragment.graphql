@@ -1,5 +1,4 @@
-query GetEventItemsByLiveEventId($id: ID!) {
-  getEventItemsByLiveEventId(id: $id) {
+fragment EventItemGQL on EventItem {
     id
     externalId
     name
@@ -8,5 +7,4 @@ query GetEventItemsByLiveEventId($id: ID!) {
     discountedPrice
     deeplinkUrl
     imageUrl
-  }
 }

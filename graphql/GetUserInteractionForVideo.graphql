@@ -1,7 +1,0 @@
-query GetUserInteractionForVideo($id: ID!, $userId: ID!) {
-  getUserInteractionForVideo(id: $id, userId: $userId) {
-    userId
-    videoId
-    like
-  }
-}

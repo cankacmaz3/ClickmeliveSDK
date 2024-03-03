@@ -9,6 +9,6 @@ import Foundation
 
 public struct Item {
     let name: String
-    let imageUrl: URL?
-    let deeplinkUrl: URL?
+    let imageUrl: String?
+    let deeplinkUrl: String?
 }

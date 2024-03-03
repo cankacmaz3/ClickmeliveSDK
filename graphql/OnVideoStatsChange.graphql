@@ -1,18 +1,5 @@
 subscription OnVideoStatsChange($id: ID!) {
     onVideoStatsChange(id: $id) {
-        id
-        title
-        description
-        userId
-        tags
-        items
-        thumbnailUrl
-        videoUrl
-        isActive
-        totalLikeCount
-        createdAt
-        updatedAt
-        totalViewer
+        ...VideoGQL
     }
 }
-

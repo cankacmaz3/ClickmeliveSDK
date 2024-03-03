@@ -1,10 +1,5 @@
 subscription OnCreateChatMessage($eventId: ID!) {
-  onCreateChatMessage(eventId: $eventId) {
-    id
-    eventId
-    userId
-    userDisplayName
-    message
-    createdAt
-  }
+    onCreateChatMessage(eventId: $eventId) {
+        ...ChatMessageGQL
+    }
 }

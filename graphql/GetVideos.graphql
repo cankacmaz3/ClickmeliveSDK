@@ -1,20 +1,10 @@
-query GetVideos {
-    getVideos {
+query GetVideos($limit: Int, $nextToken: String) {
+    getVideos(limit: $limit, nextToken: $nextToken) {
         nextToken
         videos {
-            id
-            title
-            description
-            userId
+            ...VideoGQL
             tags
             items
-            thumbnailUrl
-            videoUrl
-            isActive
-            totalLikeCount
-            createdAt
-            updatedAt
-            totalViewer
         }
     }
 }

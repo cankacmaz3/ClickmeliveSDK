@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ClickmeliveSaasAPI
 
 struct LiveEvent {
     let id: String
@@ -13,10 +14,10 @@ struct LiveEvent {
     let title: String
     let tags: [Tag]
     let items: [Item]
-    let playbackUrl: URL?
-    let teaserUrl: URL?
-    let replayUrl: URL?
-    let thumbnailUrl: URL?
+    let playbackUrl: String?
+    let teaserUrl: String?
+    let replayUrl: String?
+    let thumbnailUrl: String?
     let totalViewer: Int
     let totalLikeCount: Int
     let estimatedStartingDate: String?

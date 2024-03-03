@@ -7,7 +7,8 @@ public class LikeVideoMutation: GraphQLMutation {
   public static let operationName: String = "LikeVideo"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"mutation LikeVideo($videoId: ID!, $userId: ID!, $like: Boolean!) { likeVideo(videoId: $videoId, userId: $userId, like: $like) { __typename id title description userId tags items thumbnailUrl videoUrl isActive totalLikeCount createdAt updatedAt totalViewer } }"#
+      #"mutation LikeVideo($videoId: ID!, $userId: ID!, $like: Boolean!) { likeVideo(videoId: $videoId, userId: $userId, like: $like) { __typename ...VideoGQL } }"#,
+      fragments: [VideoGQL.self]
     ))
 
   public var videoId: ID
@@ -56,19 +57,7 @@ public class LikeVideoMutation: GraphQLMutation {
       public static var __parentType: ApolloAPI.ParentType { ClickmeliveSaasAPI.Objects.Video }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("id", ClickmeliveSaasAPI.ID.self),
-        .field("title", String.self),
-        .field("description", String?.self),
-        .field("userId", String.self),
-        .field("tags", [String?]?.self),
-        .field("items", [String?]?.self),
-        .field("thumbnailUrl", String.self),
-        .field("videoUrl", String.self),
-        .field("isActive", Bool.self),
-        .field("totalLikeCount", Int.self),
-        .field("createdAt", ClickmeliveSaasAPI.AWSDateTime.self),
-        .field("updatedAt", ClickmeliveSaasAPI.AWSDateTime.self),
-        .field("totalViewer", Int.self),
+        .fragment(VideoGQL.self),
       ] }
 
       ///  Id of the video.
@@ -79,10 +68,6 @@ public class LikeVideoMutation: GraphQLMutation {
       public var description: String? { __data["description"] }
       ///  The user id of the video creator.
       public var userId: String { __data["userId"] }
-      ///  Tag ids of the video.
-      public var tags: [String?]? { __data["tags"] }
-      ///  Event item ids of the video.
-      public var items: [String?]? { __data["items"] }
       ///  Thumbnail url of the video.
       public var thumbnailUrl: String { __data["thumbnailUrl"] }
       ///  Video url of the video.
@@ -97,6 +82,17 @@ public class LikeVideoMutation: GraphQLMutation {
       public var updatedAt: ClickmeliveSaasAPI.AWSDateTime { __data["updatedAt"] }
       ///  Total viewer count of the video.
       public var totalViewer: Int { __data["totalViewer"] }
+      ///  Tag ids of the video.
+      public var tags: [String?]? { __data["tags"] }
+      ///  Event item ids of the video.
+      public var items: [String?]? { __data["items"] }
+
+      public struct Fragments: FragmentContainer {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public var videoGQL: VideoGQL { _toFragment() }
+      }
     }
   }
 }

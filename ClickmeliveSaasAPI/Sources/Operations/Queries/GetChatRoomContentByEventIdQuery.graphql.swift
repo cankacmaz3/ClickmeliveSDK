@@ -7,16 +7,25 @@ public class GetChatRoomContentByEventIdQuery: GraphQLQuery {
   public static let operationName: String = "GetChatRoomContentByEventId"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query GetChatRoomContentByEventId($eventId: ID!) { getChatRoomContentByEventId(eventId: $eventId) { __typename nextToken messages { __typename id eventId userId userDisplayName message createdAt } } }"#
+      #"query GetChatRoomContentByEventId($eventId: ID!, $nextToken: String) { getChatRoomContentByEventId(eventId: $eventId, nextToken: $nextToken) { __typename nextToken messages { __typename ...ChatMessageGQL } } }"#,
+      fragments: [ChatMessageGQL.self]
     ))
 
   public var eventId: ID
+  public var nextToken: GraphQLNullable<String>
 
-  public init(eventId: ID) {
+  public init(
+    eventId: ID,
+    nextToken: GraphQLNullable<String>
+  ) {
     self.eventId = eventId
+    self.nextToken = nextToken
   }
 
-  public var __variables: Variables? { ["eventId": eventId] }
+  public var __variables: Variables? { [
+    "eventId": eventId,
+    "nextToken": nextToken
+  ] }
 
   public struct Data: ClickmeliveSaasAPI.SelectionSet {
     public let __data: DataDict
@@ -24,7 +33,10 @@ public class GetChatRoomContentByEventIdQuery: GraphQLQuery {
 
     public static var __parentType: ApolloAPI.ParentType { ClickmeliveSaasAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
-      .field("getChatRoomContentByEventId", GetChatRoomContentByEventId?.self, arguments: ["eventId": .variable("eventId")]),
+      .field("getChatRoomContentByEventId", GetChatRoomContentByEventId?.self, arguments: [
+        "eventId": .variable("eventId"),
+        "nextToken": .variable("nextToken")
+      ]),
     ] }
 
     ///  Get Chat Room Content by Event Id. Will be used to get chat room content by event id. This will return the latest messages in the chat room but for client purposes you have to reverse the data coming from here.
@@ -59,12 +71,7 @@ public class GetChatRoomContentByEventIdQuery: GraphQLQuery {
         public static var __parentType: ApolloAPI.ParentType { ClickmeliveSaasAPI.Objects.ChatMessage }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("id", ClickmeliveSaasAPI.ID.self),
-          .field("eventId", ClickmeliveSaasAPI.ID.self),
-          .field("userId", String.self),
-          .field("userDisplayName", String.self),
-          .field("message", String.self),
-          .field("createdAt", ClickmeliveSaasAPI.AWSDateTime.self),
+          .fragment(ChatMessageGQL.self),
         ] }
 
         ///  Id of the chat message.
@@ -79,6 +86,13 @@ public class GetChatRoomContentByEventIdQuery: GraphQLQuery {
         public var message: String { __data["message"] }
         ///  Created at date of the chat message.
         public var createdAt: ClickmeliveSaasAPI.AWSDateTime { __data["createdAt"] }
+
+        public struct Fragments: FragmentContainer {
+          public let __data: DataDict
+          public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public var chatMessageGQL: ChatMessageGQL { _toFragment() }
+        }
       }
     }
   }

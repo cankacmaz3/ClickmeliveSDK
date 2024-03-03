@@ -3,11 +3,11 @@
 
 @_exported import ApolloAPI
 
-public class GetUserInteractionForLiveEventQuery: GraphQLQuery {
-  public static let operationName: String = "GetUserInteractionForLiveEvent"
+public class GetUserInteractionLiveEventQuery: GraphQLQuery {
+  public static let operationName: String = "GetUserInteractionLiveEvent"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query GetUserInteractionForLiveEvent($id: ID!, $userId: ID!) { getUserInteractionForLiveEvent(id: $id, userId: $userId) { __typename userId liveEventId like } }"#
+      #"query GetUserInteractionLiveEvent($id: ID!, $userId: ID!) { getUserInteractionForLiveEvent(id: $id, userId: $userId) { __typename userId liveEventId like } }"#
     ))
 
   public var id: ID

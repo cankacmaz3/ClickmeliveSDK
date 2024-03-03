@@ -7,16 +7,24 @@ public class GetLiveEventsQuery: GraphQLQuery {
   public static let operationName: String = "GetLiveEvents"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query GetLiveEvents($limit: Int!) { getLiveEvents(limit: $limit) { __typename nextToken liveEvents { __typename id status type title userId description tags items thumbnailUrl replayUrl teaserUrl playbackUrl isActive totalLikeCount estimatedStartingDate startingDate endingDate createdAt updatedAt totalViewer } } }"#
+      #"query GetLiveEvents($limit: Int, $nextToken: String) { getLiveEvents(limit: $limit, nextToken: $nextToken) { __typename nextToken liveEvents { __typename id status type title userId description thumbnailUrl replayUrl teaserUrl playbackUrl isActive totalLikeCount estimatedStartingDate startingDate endingDate createdAt updatedAt totalViewer } } }"#
     ))
 
-  public var limit: Int
+  public var limit: GraphQLNullable<Int>
+  public var nextToken: GraphQLNullable<String>
 
-  public init(limit: Int) {
+  public init(
+    limit: GraphQLNullable<Int>,
+    nextToken: GraphQLNullable<String>
+  ) {
     self.limit = limit
+    self.nextToken = nextToken
   }
 
-  public var __variables: Variables? { ["limit": limit] }
+  public var __variables: Variables? { [
+    "limit": limit,
+    "nextToken": nextToken
+  ] }
 
   public struct Data: ClickmeliveSaasAPI.SelectionSet {
     public let __data: DataDict
@@ -24,7 +32,10 @@ public class GetLiveEventsQuery: GraphQLQuery {
 
     public static var __parentType: ApolloAPI.ParentType { ClickmeliveSaasAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
-      .field("getLiveEvents", GetLiveEvents?.self, arguments: ["limit": .variable("limit")]),
+      .field("getLiveEvents", GetLiveEvents?.self, arguments: [
+        "limit": .variable("limit"),
+        "nextToken": .variable("nextToken")
+      ]),
     ] }
 
     ///  Get Live Events with pagination from DynamoDB(Will not be used for now, you can use searchLiveEvents).
@@ -65,8 +76,6 @@ public class GetLiveEventsQuery: GraphQLQuery {
           .field("title", String.self),
           .field("userId", String.self),
           .field("description", String?.self),
-          .field("tags", [String?]?.self),
-          .field("items", [String?]?.self),
           .field("thumbnailUrl", String.self),
           .field("replayUrl", String?.self),
           .field("teaserUrl", String?.self),
@@ -93,10 +102,6 @@ public class GetLiveEventsQuery: GraphQLQuery {
         public var userId: String { __data["userId"] }
         ///  Description of the live event.
         public var description: String? { __data["description"] }
-        ///  Tags of the live event.
-        public var tags: [String?]? { __data["tags"] }
-        ///  Event items of the live event.
-        public var items: [String?]? { __data["items"] }
         ///  Thumbnail url of the live event.
         public var thumbnailUrl: String { __data["thumbnailUrl"] }
         ///  Replay url of the live event.

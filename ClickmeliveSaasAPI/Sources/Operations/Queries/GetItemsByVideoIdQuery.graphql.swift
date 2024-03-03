@@ -3,11 +3,12 @@
 
 @_exported import ApolloAPI
 
-public class GetEventItemsByLiveEventIdQuery: GraphQLQuery {
-  public static let operationName: String = "GetEventItemsByLiveEventId"
+public class GetItemsByVideoIdQuery: GraphQLQuery {
+  public static let operationName: String = "GetItemsByVideoId"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query GetEventItemsByLiveEventId($id: ID!) { getEventItemsByLiveEventId(id: $id) { __typename id externalId name description price discountedPrice deeplinkUrl imageUrl } }"#
+      #"query GetItemsByVideoId($id: ID!) { getEventItemsByVideoId(id: $id) { __typename ...EventItemGQL } }"#,
+      fragments: [EventItemGQL.self]
     ))
 
   public var id: ID
@@ -24,30 +25,23 @@ public class GetEventItemsByLiveEventIdQuery: GraphQLQuery {
 
     public static var __parentType: ApolloAPI.ParentType { ClickmeliveSaasAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
-      .field("getEventItemsByLiveEventId", [GetEventItemsByLiveEventId?]?.self, arguments: ["id": .variable("id")]),
+      .field("getEventItemsByVideoId", [GetEventItemsByVideoId?].self, arguments: ["id": .variable("id")]),
     ] }
 
-    ///  Get Event Items by Live Event Id. Will be used to resolve event items for a live event.
-    public var getEventItemsByLiveEventId: [GetEventItemsByLiveEventId?]? { __data["getEventItemsByLiveEventId"] }
+    ///  Get Event Items by Video Id. Will be used to resolve event items for a video.
+    public var getEventItemsByVideoId: [GetEventItemsByVideoId?] { __data["getEventItemsByVideoId"] }
 
-    /// GetEventItemsByLiveEventId
+    /// GetEventItemsByVideoId
     ///
     /// Parent Type: `EventItem`
-    public struct GetEventItemsByLiveEventId: ClickmeliveSaasAPI.SelectionSet {
+    public struct GetEventItemsByVideoId: ClickmeliveSaasAPI.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { ClickmeliveSaasAPI.Objects.EventItem }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("id", ClickmeliveSaasAPI.ID.self),
-        .field("externalId", String?.self),
-        .field("name", String.self),
-        .field("description", String?.self),
-        .field("price", Double?.self),
-        .field("discountedPrice", Double?.self),
-        .field("deeplinkUrl", String.self),
-        .field("imageUrl", String.self),
+        .fragment(EventItemGQL.self),
       ] }
 
       ///  Id of the event item.
@@ -66,6 +60,13 @@ public class GetEventItemsByLiveEventIdQuery: GraphQLQuery {
       public var deeplinkUrl: String { __data["deeplinkUrl"] }
       ///  Image url of the event item.
       public var imageUrl: String { __data["imageUrl"] }
+
+      public struct Fragments: FragmentContainer {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public var eventItemGQL: EventItemGQL { _toFragment() }
+      }
     }
   }
 }

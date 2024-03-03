@@ -7,7 +7,8 @@ public class LikeLiveEventMutation: GraphQLMutation {
   public static let operationName: String = "LikeLiveEvent"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"mutation LikeLiveEvent($liveEventId: ID!, $userId: ID!, $like: Boolean!) { likeLiveEvent(liveEventId: $liveEventId, userId: $userId, like: $like) { __typename id status type title userId description tags items thumbnailUrl replayUrl teaserUrl playbackUrl isActive totalLikeCount estimatedStartingDate startingDate endingDate createdAt updatedAt totalViewer } }"#
+      #"mutation LikeLiveEvent($liveEventId: ID!, $userId: ID!, $like: Boolean!) { likeLiveEvent(liveEventId: $liveEventId, userId: $userId, like: $like) { __typename ...LiveEventGQL } }"#,
+      fragments: [LiveEventGQL.self]
     ))
 
   public var liveEventId: ID
@@ -56,26 +57,7 @@ public class LikeLiveEventMutation: GraphQLMutation {
       public static var __parentType: ApolloAPI.ParentType { ClickmeliveSaasAPI.Objects.LiveEvent }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("id", ClickmeliveSaasAPI.ID.self),
-        .field("status", Int.self),
-        .field("type", Int.self),
-        .field("title", String.self),
-        .field("userId", String.self),
-        .field("description", String?.self),
-        .field("tags", [String?]?.self),
-        .field("items", [String?]?.self),
-        .field("thumbnailUrl", String.self),
-        .field("replayUrl", String?.self),
-        .field("teaserUrl", String?.self),
-        .field("playbackUrl", String?.self),
-        .field("isActive", Bool.self),
-        .field("totalLikeCount", Int.self),
-        .field("estimatedStartingDate", ClickmeliveSaasAPI.AWSDateTime.self),
-        .field("startingDate", ClickmeliveSaasAPI.AWSDateTime?.self),
-        .field("endingDate", ClickmeliveSaasAPI.AWSDateTime?.self),
-        .field("createdAt", ClickmeliveSaasAPI.AWSDateTime.self),
-        .field("updatedAt", ClickmeliveSaasAPI.AWSDateTime.self),
-        .field("totalViewer", Int.self),
+        .fragment(LiveEventGQL.self),
       ] }
 
       ///  Id of the live event.
@@ -90,10 +72,6 @@ public class LikeLiveEventMutation: GraphQLMutation {
       public var userId: String { __data["userId"] }
       ///  Description of the live event.
       public var description: String? { __data["description"] }
-      ///  Tags of the live event.
-      public var tags: [String?]? { __data["tags"] }
-      ///  Event items of the live event.
-      public var items: [String?]? { __data["items"] }
       ///  Thumbnail url of the live event.
       public var thumbnailUrl: String { __data["thumbnailUrl"] }
       ///  Replay url of the live event.
@@ -118,6 +96,17 @@ public class LikeLiveEventMutation: GraphQLMutation {
       public var updatedAt: ClickmeliveSaasAPI.AWSDateTime { __data["updatedAt"] }
       ///  Total viewer count of the live event.
       public var totalViewer: Int { __data["totalViewer"] }
+      ///  Tags of the live event.
+      public var tags: [String?]? { __data["tags"] }
+      ///  Event items of the live event.
+      public var items: [String?]? { __data["items"] }
+
+      public struct Fragments: FragmentContainer {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public var liveEventGQL: LiveEventGQL { _toFragment() }
+      }
     }
   }
 }

@@ -1,24 +1,5 @@
 subscription OnLiveEventStatsChange($id: ID!) {
-  onLiveEventStatsChange(id: $id) {
-    id
-    status
-    type
-    title
-    userId
-    description
-    tags
-    items
-    thumbnailUrl
-    replayUrl
-    teaserUrl
-    playbackUrl
-    isActive
-    totalLikeCount
-    estimatedStartingDate
-    startingDate
-    endingDate
-    createdAt
-    updatedAt
-    totalViewer
-  }
+    onLiveEventStatsChange(id: $id) {
+        ...LiveEventGQL
+    }
 }

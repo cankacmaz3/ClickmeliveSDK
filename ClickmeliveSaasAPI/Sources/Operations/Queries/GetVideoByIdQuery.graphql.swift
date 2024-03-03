@@ -7,7 +7,8 @@ public class GetVideoByIdQuery: GraphQLQuery {
   public static let operationName: String = "GetVideoById"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query GetVideoById($id: ID!) { getVideoById(id: $id) { __typename id title description userId thumbnailUrl videoUrl isActive totalLikeCount createdAt updatedAt totalViewer tags { __typename id title createdAt updatedAt } items { __typename id externalId name description price discountedPrice deeplinkUrl imageUrl } } }"#
+      #"query GetVideoById($id: ID!) { getVideoById(id: $id) { __typename id title description userId thumbnailUrl videoUrl isActive totalLikeCount createdAt updatedAt totalViewer tags { __typename ...EventTagGQL } items { __typename ...EventItemGQL } } }"#,
+      fragments: [EventItemGQL.self, EventTagGQL.self]
     ))
 
   public var id: ID
@@ -92,10 +93,7 @@ public class GetVideoByIdQuery: GraphQLQuery {
         public static var __parentType: ApolloAPI.ParentType { ClickmeliveSaasAPI.Objects.Tag }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("id", ClickmeliveSaasAPI.ID.self),
-          .field("title", String.self),
-          .field("createdAt", ClickmeliveSaasAPI.AWSDateTime.self),
-          .field("updatedAt", ClickmeliveSaasAPI.AWSDateTime.self),
+          .fragment(EventTagGQL.self),
         ] }
 
         ///  Id of the tag.
@@ -106,6 +104,13 @@ public class GetVideoByIdQuery: GraphQLQuery {
         public var createdAt: ClickmeliveSaasAPI.AWSDateTime { __data["createdAt"] }
         ///  Last Updated at date of the tag.
         public var updatedAt: ClickmeliveSaasAPI.AWSDateTime { __data["updatedAt"] }
+
+        public struct Fragments: FragmentContainer {
+          public let __data: DataDict
+          public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public var eventTagGQL: EventTagGQL { _toFragment() }
+        }
       }
 
       /// GetVideoById.Item
@@ -118,14 +123,7 @@ public class GetVideoByIdQuery: GraphQLQuery {
         public static var __parentType: ApolloAPI.ParentType { ClickmeliveSaasAPI.Objects.EventItem }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("id", ClickmeliveSaasAPI.ID.self),
-          .field("externalId", String?.self),
-          .field("name", String.self),
-          .field("description", String?.self),
-          .field("price", Double?.self),
-          .field("discountedPrice", Double?.self),
-          .field("deeplinkUrl", String.self),
-          .field("imageUrl", String.self),
+          .fragment(EventItemGQL.self),
         ] }
 
         ///  Id of the event item.
@@ -144,6 +142,13 @@ public class GetVideoByIdQuery: GraphQLQuery {
         public var deeplinkUrl: String { __data["deeplinkUrl"] }
         ///  Image url of the event item.
         public var imageUrl: String { __data["imageUrl"] }
+
+        public struct Fragments: FragmentContainer {
+          public let __data: DataDict
+          public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public var eventItemGQL: EventItemGQL { _toFragment() }
+        }
       }
     }
   }

@@ -1,13 +1,8 @@
-query GetChatRoomContentByEventId($eventId: ID!) {
-  getChatRoomContentByEventId(eventId: $eventId) {
-    nextToken
-    messages {
-      id
-      eventId
-      userId
-      userDisplayName
-      message
-      createdAt
+query GetChatRoomContentByEventId($eventId: ID!, $nextToken: String) {
+    getChatRoomContentByEventId(eventId: $eventId, nextToken: $nextToken) {
+        nextToken
+        messages {
+            ...ChatMessageGQL
+        }
     }
-  }
 }

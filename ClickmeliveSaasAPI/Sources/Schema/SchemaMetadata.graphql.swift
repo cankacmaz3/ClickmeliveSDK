@@ -25,19 +25,24 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "Query": return ClickmeliveSaasAPI.Objects.Query
     case "ChatRoomContent": return ClickmeliveSaasAPI.Objects.ChatRoomContent
     case "ChatMessage": return ClickmeliveSaasAPI.Objects.ChatMessage
+    case "Subscription": return ClickmeliveSaasAPI.Objects.Subscription
+    case "EventItem": return ClickmeliveSaasAPI.Objects.EventItem
+    case "VideoSearchConnection": return ClickmeliveSaasAPI.Objects.VideoSearchConnection
+    case "Video": return ClickmeliveSaasAPI.Objects.Video
+    case "PaginationMetadata": return ClickmeliveSaasAPI.Objects.PaginationMetadata
     case "Mutation": return ClickmeliveSaasAPI.Objects.Mutation
     case "LiveEvent": return ClickmeliveSaasAPI.Objects.LiveEvent
-    case "Subscription": return ClickmeliveSaasAPI.Objects.Subscription
-    case "Video": return ClickmeliveSaasAPI.Objects.Video
     case "VideoConnection": return ClickmeliveSaasAPI.Objects.VideoConnection
+    case "ChatMessageBan": return ClickmeliveSaasAPI.Objects.ChatMessageBan
     case "VideoDetail": return ClickmeliveSaasAPI.Objects.VideoDetail
     case "Tag": return ClickmeliveSaasAPI.Objects.Tag
-    case "EventItem": return ClickmeliveSaasAPI.Objects.EventItem
+    case "LiveEventSearchConnection": return ClickmeliveSaasAPI.Objects.LiveEventSearchConnection
     case "LiveEventUserInteraction": return ClickmeliveSaasAPI.Objects.LiveEventUserInteraction
     case "VideoUserInteraction": return ClickmeliveSaasAPI.Objects.VideoUserInteraction
     case "LiveEventDetail": return ClickmeliveSaasAPI.Objects.LiveEventDetail
     case "LiveEventConnection": return ClickmeliveSaasAPI.Objects.LiveEventConnection
     case "LiveEventViewer": return ClickmeliveSaasAPI.Objects.LiveEventViewer
+    case "TagConnection": return ClickmeliveSaasAPI.Objects.TagConnection
     default: return nil
     }
   }

@@ -12,20 +12,10 @@ query GetVideoById($id: ID!) {
         updatedAt
         totalViewer
         tags {
-            id
-            title
-            createdAt
-            updatedAt
+            ...EventTagGQL
         }
         items {
-            id
-            externalId
-            name
-            description
-            price
-            discountedPrice
-            deeplinkUrl
-            imageUrl
+            ...EventItemGQL
         }
     }
 }
