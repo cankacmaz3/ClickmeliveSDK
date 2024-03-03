@@ -13,7 +13,7 @@ import ApolloWebSocket
 class CMLApolloClient {
     static let shared = CMLApolloClient()
 
-    private lazy var apollo: ApolloClient = {
+    lazy var apollo: ApolloClient = {
         let client = URLSessionClient()
         let cache = InMemoryNormalizedCache()
         let store = ApolloStore(cache: cache)

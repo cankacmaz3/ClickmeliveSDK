@@ -8,7 +8,7 @@
 import Foundation
 
 public struct Item {
-    let name: String
-    let imageUrl: String?
-    let deeplinkUrl: String?
+    public let name: String
+    public let imageUrl: String?
+    public let deeplinkUrl: String?
 }

@@ -5,7 +5,7 @@
 //  Created by Can on 2.03.2024.
 //
 
-enum LiveEventStatus: String {
+public enum LiveEventStatus: String {
     case None
     case Created
     case Teaser

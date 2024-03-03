@@ -31,3 +31,9 @@ public class CML {
     }
 }
 
+extension CML {
+    public static func loadLiveEvents(params: CMLLiveEventsQuery.Params, completion: @escaping (Result<[LiveEvent], Error>) -> Void) {
+        let liveEventFinder = GraphQLLiveEventFinder(apolloClient: CMLApolloClient.shared.apollo)
+        liveEventFinder.find(params: params, completion: completion)
+    }
+}

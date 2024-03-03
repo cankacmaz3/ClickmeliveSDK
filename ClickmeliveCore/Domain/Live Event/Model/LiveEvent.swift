@@ -8,17 +8,17 @@
 import Foundation
 import ClickmeliveSaasAPI
 
-struct LiveEvent {
-    let id: String
-    let status: LiveEventStatus
-    let title: String
-    let tags: [Tag]
-    let items: [Item]
-    let playbackUrl: String?
-    let teaserUrl: String?
-    let replayUrl: String?
-    let thumbnailUrl: String?
-    let totalViewer: Int
-    let totalLikeCount: Int
-    let estimatedStartingDate: String?
+public struct LiveEvent {
+    public let id: String
+    public let status: LiveEventStatus
+    public let title: String
+    public let tags: [Tag]
+    public let items: [Item]
+    public let playbackUrl: String?
+    public let teaserUrl: String?
+    public let replayUrl: String?
+    public let thumbnailUrl: String?
+    public let totalViewer: Int
+    public let totalLikeCount: Int
+    public let estimatedStartingDate: String?
 }

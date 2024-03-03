@@ -98,6 +98,8 @@
 		366D0C012B9526B700A42E2B /* LiveEventGQL+DomainConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C002B9526B700A42E2B /* LiveEventGQL+DomainConversion.swift */; };
 		366D0C032B95270500A42E2B /* EventTagGQL+DomainConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C022B95270500A42E2B /* EventTagGQL+DomainConversion.swift */; };
 		366D0C052B95276B00A42E2B /* EventItemGQL+DomainConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C042B95276B00A42E2B /* EventItemGQL+DomainConversion.swift */; };
+		366D0C092B9536AA00A42E2B /* CMLLiveEventsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C082B9536AA00A42E2B /* CMLLiveEventsQuery.swift */; };
+		366D0C0C2B9536E300A42E2B /* GraphQLNullable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C0B2B9536E300A42E2B /* GraphQLNullable+Extensions.swift */; };
 		3695F0382B935FFB003925F1 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F0372B935FFB003925F1 /* Apollo */; };
 		3695F03A2B935FFB003925F1 /* ApolloAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F0392B935FFB003925F1 /* ApolloAPI */; };
 		3695F03C2B935FFB003925F1 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F03B2B935FFB003925F1 /* ApolloWebSocket */; };
@@ -211,6 +213,8 @@
 		366D0C002B9526B700A42E2B /* LiveEventGQL+DomainConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiveEventGQL+DomainConversion.swift"; sourceTree = "<group>"; };
 		366D0C022B95270500A42E2B /* EventTagGQL+DomainConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventTagGQL+DomainConversion.swift"; sourceTree = "<group>"; };
 		366D0C042B95276B00A42E2B /* EventItemGQL+DomainConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventItemGQL+DomainConversion.swift"; sourceTree = "<group>"; };
+		366D0C082B9536AA00A42E2B /* CMLLiveEventsQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLLiveEventsQuery.swift; sourceTree = "<group>"; };
+		366D0C0B2B9536E300A42E2B /* GraphQLNullable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GraphQLNullable+Extensions.swift"; sourceTree = "<group>"; };
 		3695F01F2B935DDD003925F1 /* ClickmeliveCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ClickmeliveCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3695F02E2B935E62003925F1 /* ClickmeliveUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ClickmeliveUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3695F03D2B936027003925F1 /* CMLApolloClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLApolloClient.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 				366D0B2D2B93910D00A42E2B /* Feature */,
 				366D0BB02B94942F00A42E2B /* Mapper */,
 				366D0B082B9374EF00A42E2B /* Model */,
+				366D0C0D2B9538DF00A42E2B /* Presentation */,
 			);
 			path = "Live Event";
 			sourceTree = "<group>";
@@ -546,6 +551,21 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		366D0C0A2B9536D100A42E2B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				366D0C0B2B9536E300A42E2B /* GraphQLNullable+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		366D0C0D2B9538DF00A42E2B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		3695F0152B935DDD003925F1 = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +592,7 @@
 				3695F0352B935FA3003925F1 /* API */,
 				3695F03F2B936060003925F1 /* API Infra */,
 				366D0B032B93741B00A42E2B /* Domain */,
+				366D0C0A2B9536D100A42E2B /* Extensions */,
 				3695F0492B93611A003925F1 /* SDK Interfaces */,
 				3695F0462B9360EB003925F1 /* Utility */,
 			);
@@ -626,6 +647,7 @@
 			children = (
 				3695F04A2B936133003925F1 /* CML.swift */,
 				3695F04C2B936143003925F1 /* CMLOptions.swift */,
+				366D0C082B9536AA00A42E2B /* CMLLiveEventsQuery.swift */,
 			);
 			path = "SDK Interfaces";
 			sourceTree = "<group>";
@@ -791,6 +813,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366D0C0C2B9536E300A42E2B /* GraphQLNullable+Extensions.swift in Sources */,
 				366D0B282B938FAB00A42E2B /* OnLiveEventUpdateSubscriptionMapper.swift in Sources */,
 				366D0B0F2B93754F00A42E2B /* Tag.swift in Sources */,
 				366D0B332B93929100A42E2B /* LiveEventItemLoader.swift in Sources */,
@@ -819,6 +842,7 @@
 				366D0B1C2B9389BE00A42E2B /* LikeLiveEventMutationMapper.swift in Sources */,
 				366D0C052B95276B00A42E2B /* EventItemGQL+DomainConversion.swift in Sources */,
 				366D0B222B938E6000A42E2B /* GetUserInteractionForLiveEventQueryMapper.swift in Sources */,
+				366D0C092B9536AA00A42E2B /* CMLLiveEventsQuery.swift in Sources */,
 				366D0B2F2B93913900A42E2B /* LiveEventLoader.swift in Sources */,
 				36206E492B936B7100F76521 /* GraphQLClient.swift in Sources */,
 				366D0B262B938F5800A42E2B /* IncreaseViewerLiveEventMutationMapper.swift in Sources */,

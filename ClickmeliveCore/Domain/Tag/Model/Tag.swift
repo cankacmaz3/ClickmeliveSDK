@@ -5,6 +5,6 @@
 //  Created by Can on 2.03.2024.
 //
 
-struct Tag {
-    let title: String
+public struct Tag {
+    public let title: String
 }

@@ -8,5 +8,5 @@
 protocol LiveEventFinder {
     typealias Result = Swift.Result<[LiveEvent], Error>
 
-    func find(query: LiveEventsQuery ,completion: @escaping (Result) -> Void)
+    func find(params: CMLLiveEventsQuery.Params ,completion: @escaping (Result) -> Void)
 }
