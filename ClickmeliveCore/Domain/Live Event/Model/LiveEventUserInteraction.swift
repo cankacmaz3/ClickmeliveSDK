@@ -5,6 +5,6 @@
 //  Created by Can on 2.03.2024.
 //
 
-struct LiveEventUserInteraction {
+public struct LiveEventUserInteraction {
     let like: Bool
 }

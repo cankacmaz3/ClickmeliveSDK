@@ -5,7 +5,7 @@
 //  Created by Can on 2.03.2024.
 //
 
-struct LiveEventViewer {
+public struct LiveEventViewer {
     let viewerCount: Int
 }
 

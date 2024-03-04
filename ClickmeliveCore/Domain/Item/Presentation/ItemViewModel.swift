@@ -19,12 +19,10 @@ public final class ItemViewModel {
     }
     
     public var imageURL: URL? {
-        guard let urlString = model.imageUrl else { return nil }
-        return URL(string: urlString)
+        model.imageUrl.asURL
     }
     
     public var deeplinkUrl: URL? {
-        guard let urlString = model.deeplinkUrl else { return nil }
-        return URL(string: urlString)
+        model.deeplinkUrl.asURL
     }
 }

@@ -1,0 +1,12 @@
+//
+//  VideoUserInteraction.swift
+//  ClickmeliveCore
+//
+//  Created by Can on 4.03.2024.
+//
+
+import Foundation
+
+public struct VideoUserInteraction {
+    let like: Bool
+}
