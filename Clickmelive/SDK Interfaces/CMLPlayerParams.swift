@@ -6,22 +6,28 @@
 //
 
 public class CMLPlayerParams {
-    private var playerType: PlayerType?
+    private var playerType: PlayerType
 
-    private init() {}
+    private init(playerType: PlayerType) {
+        self.playerType = playerType
+    }
     
     public class Builder {
-        private var params = CMLPlayerParams()
+        
+        private var playerType: PlayerType?
         
         public init() {}
         
         public func setType(_ playerType: PlayerType) -> Builder {
-            params.playerType = playerType
+            self.playerType = playerType
             return self
         }
         
         public func build() -> CMLPlayerParams {
-            return params
+            guard let playerType = self.playerType else {
+                fatalError("Error: player type is required.")
+            }
+            return CMLPlayerParams(playerType: playerType)
         }
     }
     

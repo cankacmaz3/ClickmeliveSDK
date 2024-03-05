@@ -6,22 +6,28 @@
 //
 
 public class CMLChatOptions {
-    private var username: String?
+    private var username: String
     
-    private init() {}
+    private init(username: String) {
+        self.username = username
+    }
     
     public class Builder {
+        
+        private var username: String?
+        
         public init() {}
         
-        private var options = CMLChatOptions()
-        
         public func setUsername(_ username: String) -> Builder {
-            options.username = username
+            self.username = username
             return self
         }
         
         public func build() -> CMLChatOptions {
-            return options
+            guard let username = self.username else {
+                fatalError("Error: username is required.")
+            }
+            return CMLChatOptions(username: username)
         }
     }
 }

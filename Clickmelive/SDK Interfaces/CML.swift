@@ -21,7 +21,7 @@ public class CML {
         guard let options = options else {
             fatalError("CML is not initialized. You must initialize CML before accessing API Key.")
         }
-        return options.apiKey
+        return options.getApiKey()
     }
     
     func getAPIConfiguration() -> APIConfiguration {

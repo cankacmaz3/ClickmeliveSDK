@@ -6,20 +6,25 @@
 //
 
 public class CMLOptions {
-    let apiKey: String
-    let fontNames: [Fonts: String]?
+    private var apiKey: String
+    private var fontNames: [Fonts: String]
 
-    private init(apiKey: String, fontNames: [Fonts: String]? = nil) {
+    private init(apiKey: String, fontNames: [Fonts : String]) {
         self.apiKey = apiKey
         self.fontNames = fontNames
     }
-
+    
+    func getApiKey() -> String {
+        return apiKey
+    }
+    
     public class Builder {
+        
         private var apiKey: String?
         private var fontNames: [Fonts: String]?
-
+       
         public init() {}
-
+        
         public func setApiKey(_ apiKey: String) -> Builder {
             self.apiKey = apiKey
             return self
@@ -31,10 +36,11 @@ public class CMLOptions {
         }
 
         public func build() -> CMLOptions {
+          
             guard let apiKey = self.apiKey else {
-                fatalError("Error: apiKey must be set before building.")
+                fatalError("Error: apiKey is required.")
             }
-
+            
             // Use the provided font names or revert to default values if not provided
             let fontsToUse = fontNames ?? [
                 .light: Fonts.light.rawValue,
