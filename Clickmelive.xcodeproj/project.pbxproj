@@ -150,6 +150,11 @@
 		36EDB63A2B971AED00F30CAD /* CMLPlayerParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB6392B971AED00F30CAD /* CMLPlayerParams.swift */; };
 		36EDB63C2B97282F00F30CAD /* CMLPlayerUIOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB63B2B97282F00F30CAD /* CMLPlayerUIOptions.swift */; };
 		36EDB63E2B97286200F30CAD /* CMLChatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB63D2B97286200F30CAD /* CMLChatOptions.swift */; };
+		36EDB6492B972B6900F30CAD /* UIWindow+PIPKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB6482B972B6900F30CAD /* UIWindow+PIPKitExtensions.swift */; };
+		36EDB64B2B972C0E00F30CAD /* PIPKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB64A2B972C0E00F30CAD /* PIPKit.swift */; };
+		36EDB64D2B972C2700F30CAD /* PIPUsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB64C2B972C2700F30CAD /* PIPUsable.swift */; };
+		36EDB64F2B972C4200F30CAD /* PIPKitEventDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB64E2B972C4200F30CAD /* PIPKitEventDispatcher.swift */; };
+		36EDB6512B972C6800F30CAD /* UIViewController+PIPKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB6502B972C6800F30CAD /* UIViewController+PIPKitExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -295,6 +300,11 @@
 		36EDB6392B971AED00F30CAD /* CMLPlayerParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLPlayerParams.swift; sourceTree = "<group>"; };
 		36EDB63B2B97282F00F30CAD /* CMLPlayerUIOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLPlayerUIOptions.swift; sourceTree = "<group>"; };
 		36EDB63D2B97286200F30CAD /* CMLChatOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLChatOptions.swift; sourceTree = "<group>"; };
+		36EDB6482B972B6900F30CAD /* UIWindow+PIPKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+PIPKitExtensions.swift"; sourceTree = "<group>"; };
+		36EDB64A2B972C0E00F30CAD /* PIPKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIPKit.swift; sourceTree = "<group>"; };
+		36EDB64C2B972C2700F30CAD /* PIPUsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIPUsable.swift; sourceTree = "<group>"; };
+		36EDB64E2B972C4200F30CAD /* PIPKitEventDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIPKitEventDispatcher.swift; sourceTree = "<group>"; };
+		36EDB6502B972C6800F30CAD /* UIViewController+PIPKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PIPKitExtensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -700,6 +710,7 @@
 			children = (
 				36EDB60B2B96908300F30CAD /* Core */,
 				36EDB60C2B9690B600F30CAD /* UI */,
+				36EDB6422B972AC000F30CAD /* PIP Kit */,
 				3695F0492B93611A003925F1 /* SDK Interfaces */,
 				3695F0462B9360EB003925F1 /* Utility */,
 				366D0BA82B94809500A42E2B /* SharedIOSModuleBundle.swift */,
@@ -916,6 +927,26 @@
 			path = "API Configuration";
 			sourceTree = "<group>";
 		};
+		36EDB6422B972AC000F30CAD /* PIP Kit */ = {
+			isa = PBXGroup;
+			children = (
+				36EDB6432B972B2A00F30CAD /* Extensions */,
+				36EDB64A2B972C0E00F30CAD /* PIPKit.swift */,
+				36EDB64C2B972C2700F30CAD /* PIPUsable.swift */,
+				36EDB64E2B972C4200F30CAD /* PIPKitEventDispatcher.swift */,
+			);
+			path = "PIP Kit";
+			sourceTree = "<group>";
+		};
+		36EDB6432B972B2A00F30CAD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				36EDB6482B972B6900F30CAD /* UIWindow+PIPKitExtensions.swift */,
+				36EDB6502B972C6800F30CAD /* UIViewController+PIPKitExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1072,6 +1103,7 @@
 				366D0B312B93927300A42E2B /* LiveEventDetailLoader.swift in Sources */,
 				3695F0482B936104003925F1 /* CMLConstants.swift in Sources */,
 				36EDB6202B96914400F30CAD /* ItemCell.swift in Sources */,
+				36EDB6512B972C6800F30CAD /* UIViewController+PIPKitExtensions.swift in Sources */,
 				36EDB5C52B95F98F00F30CAD /* VideoLocalization.swift in Sources */,
 				36EDB6292B96915800F30CAD /* PlayerViewController.swift in Sources */,
 				366D0C152B953FD900A42E2B /* SearchVideosQueryMapper.swift in Sources */,
@@ -1088,8 +1120,10 @@
 				36EDB6302B96916500F30CAD /* AppColor.swift in Sources */,
 				36EDB61F2B96914400F30CAD /* ItemCellController.swift in Sources */,
 				366D0C182B95405300A42E2B /* Video.swift in Sources */,
+				36EDB64D2B972C2700F30CAD /* PIPUsable.swift in Sources */,
 				36EDB5C72B95F98F00F30CAD /* VideoUserInteractionViewModel.swift in Sources */,
 				366D0C012B9526B700A42E2B /* LiveEventGQL+DomainConversion.swift in Sources */,
+				36EDB64B2B972C0E00F30CAD /* PIPKit.swift in Sources */,
 				36EDB6172B96913400F30CAD /* UIView+UIExtensions.swift in Sources */,
 				366D0B2A2B93902500A42E2B /* GetLiveViewerCountQueryMapper.swift in Sources */,
 				366D0B3B2B93930700A42E2B /* LiveEventViewerIncreaser.swift in Sources */,
@@ -1110,6 +1144,7 @@
 				36EDB6102B96912B00F30CAD /* CollectionCellController.swift in Sources */,
 				366D0C052B95276B00A42E2B /* EventItemGQL+DomainConversion.swift in Sources */,
 				36EDB6192B96913400F30CAD /* UIImage+UIExtensions.swift in Sources */,
+				36EDB64F2B972C4200F30CAD /* PIPKitEventDispatcher.swift in Sources */,
 				366D0C1F2B9541BA00A42E2B /* VideoFinder.swift in Sources */,
 				36EDB6242B96915800F30CAD /* ChatCellController.swift in Sources */,
 				36EDB6282B96915800F30CAD /* PlayerVCView.swift in Sources */,
@@ -1125,6 +1160,7 @@
 				36EDB61C2B96913900F30CAD /* Customizable.swift in Sources */,
 				366D0B2F2B93913900A42E2B /* LiveEventLoader.swift in Sources */,
 				36EDB62A2B96915800F30CAD /* AutoSizingTextView.swift in Sources */,
+				36EDB6492B972B6900F30CAD /* UIWindow+PIPKitExtensions.swift in Sources */,
 				36206E492B936B7100F76521 /* GraphQLClient.swift in Sources */,
 				36EDB6332B96916D00F30CAD /* SharedIOSModuleBundle.swift in Sources */,
 				36EDB6152B96913400F30CAD /* UIFont+UIExtensions.swift in Sources */,
