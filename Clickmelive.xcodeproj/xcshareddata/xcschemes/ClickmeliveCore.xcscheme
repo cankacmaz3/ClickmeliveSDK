@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3695F01E2B935DDD003925F1"
-               BuildableName = "ClickmeliveCore.framework"
-               BlueprintName = "ClickmeliveCore"
+               BuildableName = "Clickmelive.framework"
+               BlueprintName = "Clickmelive"
                ReferencedContainer = "container:Clickmelive.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -50,8 +50,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3695F01E2B935DDD003925F1"
-            BuildableName = "ClickmeliveCore.framework"
-            BlueprintName = "ClickmeliveCore"
+            BuildableName = "Clickmelive.framework"
+            BlueprintName = "Clickmelive"
             ReferencedContainer = "container:Clickmelive.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
