@@ -11,8 +11,7 @@ public class CMLPlayerUIOptions {
     private var isProductsVisible: Bool = false
     private var isTitleVisible: Bool = false
     private var isEventTypeVisible: Bool = false
-    private var enablePictureInPicture: Bool = false
-    
+   
     private init() {}
     
     public class Builder {
@@ -43,11 +42,6 @@ public class CMLPlayerUIOptions {
         
         public func isEventTypeVisible(_ visible: Bool) -> Builder {
             options.isEventTypeVisible = visible
-            return self
-        }
-        
-        public func enablePictureInPicture(_ enabled: Bool) -> Builder {
-            options.enablePictureInPicture = enabled
             return self
         }
         

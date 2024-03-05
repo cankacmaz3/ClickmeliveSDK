@@ -5,6 +5,8 @@
 //  Created by Can on 2.03.2024.
 //
 
+import Foundation
+
 public class CML {
     public static let shared = CML()
 
@@ -15,6 +17,7 @@ public class CML {
 
     public static func initialize(_ cmlOptions: CMLOptions) {
         shared.options = cmlOptions
+        shared.ensureUserIdCreated()
     }
 
     func getApiKey() -> String {
@@ -28,6 +31,13 @@ public class CML {
         .init(apiUrl: "https://zda3sspwdvfufbzqa6at2bfheu.appsync-api.eu-west-1.amazonaws.com/graphql",
               wssUrl: "wss://zda3sspwdvfufbzqa6at2bfheu.appsync-realtime-api.eu-west-1.amazonaws.com/graphql",
               domain: "zda3sspwdvfufbzqa6at2bfheu.appsync-api.eu-west-1.amazonaws.com")
+    }
+    
+    private func ensureUserIdCreated() {
+        let userDefaults = CMLUserDefaults()
+        if userDefaults.userId.isEmpty {
+            userDefaults.userId = UUID().uuidString
+        }
     }
 }
 
