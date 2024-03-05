@@ -57,14 +57,12 @@ extension CML {
 
 extension CML {
     public static func startPlayer(cmlPlayerParams: CMLPlayerParams, cmlPlayerUIOptions: CMLPlayerUIOptions, cmlChatOptions: CMLChatOptions) {
-        if let playerType = cmlPlayerParams.getType() {
-            playerFlow = PlayerFlow(playerType: playerType)
-            
-            playerFlow?.teardown = { coordinator in
-                playerFlow = nil
-            }
-            
-            playerFlow?.start()
+        playerFlow = PlayerFlow(cmlPlayerParams: cmlPlayerParams, cmlChatOptions: cmlChatOptions)
+        
+        playerFlow?.teardown = { coordinator in
+            playerFlow = nil
         }
+        
+        playerFlow?.start()
     }
 }

@@ -31,7 +31,7 @@ public class CMLPlayerParams {
         }
     }
     
-    public func getType() -> PlayerType? {
+    public func getType() -> PlayerType {
         return playerType
     }
 }

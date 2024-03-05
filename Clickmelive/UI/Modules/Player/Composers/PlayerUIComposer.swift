@@ -12,6 +12,7 @@ final class PlayerUIComposer {
     private init() {}
     
     static func makeLiveEventPlayerViewController(id: String,
+                                                  username: String,
                                                   onItemsTapped: @escaping ([Item], PlayerViewController?) -> Void) -> PlayerViewController {
         
         let apolloClient = CMLApolloClient.shared.apollo
@@ -88,7 +89,8 @@ final class PlayerUIComposer {
         let playerViewControllerOutputHandler = LiveEventPlayerViewControllerOutputHandler(
             controller: controller,
             eventId: id,
-            userId: userDefaults.userId,
+            userId: userDefaults.userId, 
+            username: username,
             liveEventDetailManager: liveEventDetailManager,
             liveEventLikeManager: liveEventLikeManager,
             chatMessageCreateManager: chatMessageCreateManager,
@@ -182,7 +184,7 @@ final class PlayerUIComposer {
         
         controller.output = playerViewControllerOutputHandler
         
-        controller.onViewDidLoad { 
+        controller.onViewDidLoad {
             videoDetailManager.listen(id: id)
             videoStatsChangeManager.listenVideoStats(id: id)
             videoDetailManager.loadVideo(id: id)

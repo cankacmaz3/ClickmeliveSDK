@@ -100,6 +100,7 @@ extension PlayerUIComposer {
         private weak var controller: PlayerViewController?
         private let eventId: String
         private let userId: String
+        private let username: String
         private let liveEventDetailManager: LiveEventDetailManager
         private let liveEventLikeManager: LiveEventLikeManager
         private let chatMessageCreateManager: ChatMessageCreateManager
@@ -108,6 +109,7 @@ extension PlayerUIComposer {
         init(controller: PlayerViewController,
              eventId: String,
              userId: String,
+             username: String,
              liveEventDetailManager: LiveEventDetailManager,
              liveEventLikeManager: LiveEventLikeManager,
              chatMessageCreateManager: ChatMessageCreateManager,
@@ -115,6 +117,7 @@ extension PlayerUIComposer {
             self.controller = controller
             self.eventId = eventId
             self.userId = userId
+            self.username = username
             self.liveEventDetailManager = liveEventDetailManager
             self.liveEventLikeManager = liveEventLikeManager
             self.chatMessageCreateManager = chatMessageCreateManager
@@ -132,7 +135,7 @@ extension PlayerUIComposer {
         
         func messageSendTapped(message: String) {
             guard let eventId = liveEventDetailManager.liveEvent?.id else { return }
-            chatMessageCreateManager.createMessage(userId: userId, eventId: eventId, userDisplayName: "Can", message: message)
+            chatMessageCreateManager.createMessage(userId: userId, eventId: eventId, userDisplayName: username, message: message)
         }
         
         func minimizeTapped() {

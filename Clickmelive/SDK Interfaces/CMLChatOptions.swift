@@ -30,4 +30,8 @@ public class CMLChatOptions {
             return CMLChatOptions(username: username)
         }
     }
+    
+    func getUsername() -> String {
+        return username
+    }
 }

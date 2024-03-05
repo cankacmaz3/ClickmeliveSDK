@@ -16,14 +16,17 @@ class PlayerFlow: ParentCoordinator & ChildCoordinator {
     var teardown: ((PlayerFlow) -> Void)?
     var children: [AnyObject] = []
     
-    private let playerType: PlayerType
+    private let cmlPlayerParams: CMLPlayerParams
+    private let cmlChatOptions: CMLChatOptions
     
-    init(playerType: PlayerType) {
-        self.playerType = playerType
+    init(cmlPlayerParams: CMLPlayerParams,
+         cmlChatOptions: CMLChatOptions) {
+        self.cmlPlayerParams = cmlPlayerParams
+        self.cmlChatOptions = cmlChatOptions
     }
     
     func start() {
-        switch playerType {
+        switch cmlPlayerParams.getType() {
         case let .Video(id):
             startVideoPlayer(id: id)
         case let .LiveEvent(id):
@@ -47,8 +50,11 @@ class PlayerFlow: ParentCoordinator & ChildCoordinator {
     }
     
     private func startLiveEventPlayer(id: String) {
+        let username = cmlChatOptions.getUsername()
+       
         let playerUIComposer = PlayerUIComposer.makeLiveEventPlayerViewController(
             id: id,
+            username: username,
             onItemsTapped: { [weak self] items, controller in
                 self?.startItemsFlow(items: items, controller: controller)
             }
