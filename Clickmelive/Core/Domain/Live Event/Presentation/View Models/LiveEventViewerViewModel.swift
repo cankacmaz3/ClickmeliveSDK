@@ -7,18 +7,18 @@
 
 import Foundation
 
-public final class LiveEventViewerViewModel {
+final class LiveEventViewerViewModel {
     private let model: LiveEventViewer
     
-    public init(model: LiveEventViewer) {
+    init(model: LiveEventViewer) {
         self.model = model
     }
     
-    public var viewerCount: String {
+    var viewerCount: String {
         model.viewerCount.toAbbreviateNumber()
     }
     
-    public var isViewerCountHidden: Bool {
+    var isViewerCountHidden: Bool {
         model.viewerCount <= 0
     }
 }

@@ -14,13 +14,13 @@ public enum Fonts: String {
     case bold
 }
 
-public struct FontManager {
-    public static var light: String = Fonts.light.rawValue
-    public static var regular: String = Fonts.regular.rawValue
-    public static var medium: String = Fonts.medium.rawValue
-    public static var bold: String = Fonts.bold.rawValue
+struct FontManager {
+    static var light: String = Fonts.light.rawValue
+    static var regular: String = Fonts.regular.rawValue
+    static var medium: String = Fonts.medium.rawValue
+    static var bold: String = Fonts.bold.rawValue
    
-    public static func setFontNames(_ fontNames: [Fonts: String]) {
+    static func setFontNames(_ fontNames: [Fonts: String]) {
         for (font, name) in fontNames {
             switch font {
             case .light:
@@ -35,7 +35,7 @@ public struct FontManager {
         }
     }
 
-    public static func getFontName(for font: Fonts) -> String {
+    static func getFontName(for font: Fonts) -> String {
         switch font {
         case .light:
             return FontManager.light

@@ -7,22 +7,22 @@
 
 import Foundation
 
-public final class ChatMessageViewModel {
+final class ChatMessageViewModel {
     private let model: ChatMessage
     
-    public init(model: ChatMessage) {
+    init(model: ChatMessage) {
         self.model = model
     }
     
-    public var id: String {
+    var id: String {
         model.id
     }
     
-    public var userDisplayName: String {
+    var userDisplayName: String {
         model.userDisplayName
     }
     
-    public var message: String {
+    var message: String {
         model.message
     }
 }

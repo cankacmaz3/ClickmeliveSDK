@@ -141,7 +141,7 @@ extension PlayerViewController {
 }
 
 extension PlayerViewController {
-    public func display(chatMessages: [CollectionCellController]) {
+    func display(chatMessages: [CollectionCellController]) {
         playerVCView.chatView.display(chatMessages: chatMessages)
     }
     

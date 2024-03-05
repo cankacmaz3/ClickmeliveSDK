@@ -164,12 +164,12 @@ extension PlayerView {
         videoPlayer?.play()
     }
 
-    public func pauseLivePlayback() {
+    func pauseLivePlayback() {
         livePlayer?.pause()
         isLive = false
     }
 
-    public func pauseVideoPlayback() {
+    func pauseVideoPlayback() {
         videoPlayer?.pause()
     }
     
@@ -183,7 +183,7 @@ extension PlayerView {
 
 // MARK: - Delegate related methods
 extension PlayerView: IVSPlayer.Delegate {
-    public func player(_ player: IVSPlayer, didChangeState state: IVSPlayer.State) {
+    func player(_ player: IVSPlayer, didChangeState state: IVSPlayer.State) {
         updateForState(state)
     }
     
@@ -191,7 +191,7 @@ extension PlayerView: IVSPlayer.Delegate {
         print(error.localizedDescription)
     }
     
-    public func player(_ player: IVSPlayer, didChangeVideoSize videoSize: CGSize) {
+    func player(_ player: IVSPlayer, didChangeVideoSize videoSize: CGSize) {
         if videoSize.height == 0 || videoSize.width == 0 { return }
         ivsVideoPlayerView.videoGravity = player.videoSize.height > player.videoSize.width ? AVLayerVideoGravity.resizeAspectFill : AVLayerVideoGravity.resizeAspect
     }

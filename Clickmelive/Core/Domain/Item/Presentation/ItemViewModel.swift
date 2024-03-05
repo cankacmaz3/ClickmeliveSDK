@@ -7,22 +7,22 @@
 
 import Foundation
 
-public final class ItemViewModel {
+final class ItemViewModel {
     private let model: Item
     
-    public init(model: Item) {
+    init(model: Item) {
         self.model = model
     }
     
-    public var name: String {
+    var name: String {
         model.name
     }
     
-    public var imageURL: URL? {
+    var imageURL: URL? {
         model.imageUrl.asURL
     }
     
-    public var deeplinkUrl: URL? {
+    var deeplinkUrl: URL? {
         model.deeplinkUrl.asURL
     }
 }

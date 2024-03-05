@@ -8,18 +8,17 @@
 import UIKit
 
 extension PlayerViewController: PIPUsable {
-    public var initialState: PIPState { return .full }
-    public var initialPosition: PIPPosition { return .bottomRight }
-    public var pipSize: CGSize { return CGSize(width: 147, height: 252) }
-    public var pipCorner: PIPCorner? { return PIPCorner(radius: 10, curve: nil ) }
+    var initialState: PIPState { return .full }
+    var initialPosition: PIPPosition { return .bottomRight }
+    var pipSize: CGSize { return CGSize(width: 147, height: 252) }
+    var pipCorner: PIPCorner? { return PIPCorner(radius: 10, curve: nil ) }
     
-    
-    public func onMinimizeTapped() {
+    func onMinimizeTapped() {
         startPIPMode()
         enterPipMode()
     }
     
-    public func onCloseTapped() {
+    func onCloseTapped() {
         PIPKit.dismiss(animated: true)
     }
     
@@ -45,7 +44,7 @@ extension PlayerViewController: PIPUsable {
         }
     }
     
-    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         if PIPKit.isPIP {
             stopPIPMode()

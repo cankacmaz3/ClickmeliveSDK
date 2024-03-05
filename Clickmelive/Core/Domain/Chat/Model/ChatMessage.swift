@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ChatMessage {
+struct ChatMessage {
     let id: String
     let eventId: String
     let userId: String

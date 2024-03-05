@@ -7,14 +7,14 @@
 
 import Foundation
 
-public final class VideoUserInteractionViewModel {
+final class VideoUserInteractionViewModel {
     private let model: VideoUserInteraction
     
-    public init(model: VideoUserInteraction) {
+    init(model: VideoUserInteraction) {
         self.model = model
     }
     
-    public var like: Bool {
+    var like: Bool {
         model.like
     }
 }

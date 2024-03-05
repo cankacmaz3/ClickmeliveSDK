@@ -7,17 +7,16 @@
 
 import Foundation
 
-public final class LiveEventLocalization {
+final class LiveEventLocalization {
     
-    public var table: String { "LiveEvent" }
-    public var bundle: Bundle = Bundle(for: LiveEventLocalization.self)
+    var table: String { "LiveEvent" }
+    var bundle: Bundle = Bundle(for: LiveEventLocalization.self)
     
-    public static let shared = LiveEventLocalization()
+    static let shared = LiveEventLocalization()
     
-    public init() {}
+    init() {}
     
-    
-    public func estimatedStartingDate(day: String, month: String, time: String) -> String {
+    func estimatedStartingDate(day: String, month: String, time: String) -> String {
         let format = NSLocalizedString(
             "LiveEventEstimatedStartingDate",
             tableName: table,
@@ -27,7 +26,7 @@ public final class LiveEventLocalization {
         return String(format: format, day, month, time)
     }
     
-    public func itemsCount(_ count: Int) -> String {
+    func itemsCount(_ count: Int) -> String {
         let format = NSLocalizedString(
             "LiveEventItemsCount",
             tableName: table,
@@ -37,7 +36,7 @@ public final class LiveEventLocalization {
         return String(format: format, count)
     }
     
-    public var statusReadyToStream: String {
+    var statusReadyToStream: String {
         NSLocalizedString(
             "LiveEventStatusReadyToStream",
             tableName: table,
@@ -45,7 +44,7 @@ public final class LiveEventLocalization {
             comment: "Title for ready to stream status")
     }
     
-    public var statusReplayAvailable: String {
+    var statusReplayAvailable: String {
         NSLocalizedString(
             "LiveEventStatusReplayAvailable",
             tableName: table,
@@ -53,7 +52,7 @@ public final class LiveEventLocalization {
             comment: "Title for replay available status")
     }
     
-    public var statusStreamEnded: String {
+    var statusStreamEnded: String {
         NSLocalizedString(
             "LiveEventStatusStreamEnded",
             tableName: table,
@@ -61,7 +60,7 @@ public final class LiveEventLocalization {
             comment: "Title for stream ended status")
     }
     
-    public var statusStreaming: String {
+    var statusStreaming: String {
         NSLocalizedString(
             "LiveEventStatusStreaming",
             tableName: table,

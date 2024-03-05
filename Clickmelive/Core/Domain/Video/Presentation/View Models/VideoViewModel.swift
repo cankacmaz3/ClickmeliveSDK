@@ -7,50 +7,50 @@
 
 import Foundation
 
-public final class VideoViewModel {
+final class VideoViewModel {
     private let model: Video
     
-    public init(model: Video) {
+    init(model: Video) {
         self.model = model
     }
     
-    public var id: String {
+    var id: String {
         model.id
     }
     
-    public var title: String {
+    var title: String {
         model.title
     }
     
-    public var itemsCount: String {
+    var itemsCount: String {
         VideoLocalization.shared.itemsCount(model.items.count)
     }
     
-    public var isItemsHidden: Bool {
+    var isItemsHidden: Bool {
         model.items.isEmpty
     }
     
-    public var firstItemImageURL: URL? {
+    var firstItemImageURL: URL? {
         model.items.first?.imageUrl.asURL
     }
     
-    public var thumbnailUrl: URL? {
+    var thumbnailUrl: URL? {
         model.thumbnailUrl.asURL
     }
     
-    public var videoUrl: URL? {
+    var videoUrl: URL? {
         model.videoUrl.asURL
     }
     
-    public var totalViewer: String {
+    var totalViewer: String {
         model.totalViewer.toAbbreviateNumber()
     }
     
-    public var totalLikeCount: String {
+    var totalLikeCount: String {
         model.totalLikeCount.toAbbreviateNumber()
     }
     
-    public var statusTitle: String {
-        return VideoLocalization.shared.status
+    var statusTitle: String {
+        VideoLocalization.shared.status
     }
 }

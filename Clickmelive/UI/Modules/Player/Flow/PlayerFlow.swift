@@ -23,8 +23,32 @@ class PlayerFlow: ParentCoordinator & ChildCoordinator {
     }
     
     func start() {
-        let playerUIComposer = PlayerUIComposer.makePlayerViewController(
-            playerType: playerType,
+        switch playerType {
+        case let .Video(id):
+            startVideoPlayer(id: id)
+        case let .LiveEvent(id):
+            startLiveEventPlayer(id: id)
+        }
+    }
+    
+    private func startVideoPlayer(id: String) {
+        let playerUIComposer = PlayerUIComposer.makeVideoPlayerViewController(
+            id: id,
+            onItemsTapped: { [weak self] items, controller in
+                self?.startItemsFlow(items: items, controller: controller)
+            }
+        )
+        
+        playerUIComposer.onDeinit {  [weak self] in
+            self?.stop()
+        }
+        
+        PIPKit.show(with: playerUIComposer, completion: nil)
+    }
+    
+    private func startLiveEventPlayer(id: String) {
+        let playerUIComposer = PlayerUIComposer.makeLiveEventPlayerViewController(
+            id: id,
             onItemsTapped: { [weak self] items, controller in
                 self?.startItemsFlow(items: items, controller: controller)
             }

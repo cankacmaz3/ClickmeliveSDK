@@ -7,16 +7,16 @@
 
 import Foundation
 
-public final class VideoLocalization {
+final class VideoLocalization {
     
-    public var table: String { "Video" }
-    public var bundle: Bundle = Bundle(for: VideoLocalization.self)
+    var table: String { "Video" }
+    var bundle: Bundle = Bundle(for: VideoLocalization.self)
     
-    public static let shared = VideoLocalization()
+    static let shared = VideoLocalization()
     
-    public init() {}
+    init() {}
     
-    public func itemsCount(_ count: Int) -> String {
+    func itemsCount(_ count: Int) -> String {
         let format = NSLocalizedString(
             "VideoItemsCount",
             tableName: table,
@@ -26,7 +26,7 @@ public final class VideoLocalization {
         return String(format: format, count)
     }
     
-    public var status: String {
+    var status: String {
         NSLocalizedString(
             "VideoStatus",
             tableName: table,

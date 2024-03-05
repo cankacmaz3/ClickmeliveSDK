@@ -7,70 +7,70 @@
 
 import Foundation
 
-public final class LiveEventViewModel {
+final class LiveEventViewModel {
     private let model: LiveEvent
     
-    public init(model: LiveEvent) {
+    init(model: LiveEvent) {
         self.model = model
     }
     
-    public var id: String {
+    var id: String {
         model.id
     }
     
-    public var title: String {
+    var title: String {
         model.title
     }
     
-    public var status: LiveEventStatus {
+    var status: LiveEventStatus {
         model.status
     }
     
-    public var itemsCount: String {
+    var itemsCount: String {
         LiveEventLocalization.shared.itemsCount(model.items.count)
     }
     
-    public var isItemsHidden: Bool {
+    var isItemsHidden: Bool {
         model.items.isEmpty
     }
     
-    public var firstItemImageURL: URL? {
+    var firstItemImageURL: URL? {
         model.items.first?.imageUrl.asURL
     }
     
-    public var playbackUrl: URL? {
+    var playbackUrl: URL? {
         model.playbackUrl.asURL
     }
     
-    public var teaserUrl: URL? {
+    var teaserUrl: URL? {
         model.teaserUrl.asURL
     }
     
-    public var replayUrl: URL? {
+    var replayUrl: URL? {
         model.replayUrl.asURL
     }
     
-    public var thumbnailUrl: URL? {
+    var thumbnailUrl: URL? {
         model.thumbnailUrl.asURL
     }
     
-    public var totalViewer: String {
+    var totalViewer: String {
         model.totalViewer.toAbbreviateNumber()
     }
     
-    public var totalLikeCount: String {
+    var totalLikeCount: String {
         model.totalLikeCount.toAbbreviateNumber()
     }
     
-    public var replayAvailable: Bool {
+    var replayAvailable: Bool {
         model.replayUrl != nil
     }
     
-    public var estimatedStartingDate: String? {
+    var estimatedStartingDate: String? {
         model.estimatedStartingDate
     }
     
-    public var statusTitle: String? {
+    var statusTitle: String? {
         guard replayUrl == nil else {
             return LiveEventLocalization.shared.statusReplayAvailable
         }

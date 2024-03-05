@@ -11,121 +11,85 @@ import UIKit
 final class PlayerUIComposer {
     private init() {}
     
-    static func makePlayerViewController(playerType: PlayerType,
-                                         onItemsTapped: @escaping ([Item], PlayerViewController?) -> Void) -> PlayerViewController {
+    static func makeLiveEventPlayerViewController(id: String,
+                                                  onItemsTapped: @escaping ([Item], PlayerViewController?) -> Void) -> PlayerViewController {
         
-        /*let apolloClient = CMLApolloClient.shared.apollo
+        let apolloClient = CMLApolloClient.shared.apollo
         let userDefaults = CMLUserDefaults()
-        let imageLoader = SDWebImageLoader() */
+        let imageLoader = SDWebImageLoader()
         
         let controller = PlayerViewController()
         
-        /*let liveEventDetailManager = LiveEventDetailManagerFactory().makeManager(
-            client: apolloClient
-        )
-        
-        let liveEventDetailManagerOutputHandler = LiveEventDetailManagerOutputHandler(
+        let liveEventDetailManagerOutput = LiveEventDetailManagerOutputHandler(
             controller: controller,
             imageLoader: imageLoader
         )
         
-        liveEventDetailManager.output = liveEventDetailManagerOutputHandler
-        
-        let videoDetailManager = VideoDetailManagerFactory().makeManager(
-            client: apolloClient
+        let liveEventDetailManager = LiveEventDetailManagerFactory.makeManager(
+            client: apolloClient,
+            output: liveEventDetailManagerOutput
         )
         
-        let videoDetailManagerOutputHandler = VideoDetailManagerOutputHandler(
-            controller: controller,
-            imageLoader: imageLoader
-        )
-        
-        videoDetailManager.output = videoDetailManagerOutputHandler
-        
-        let liveEventStatsChangeManager = LiveEventStatsChangeManagerFactory().makeManager(
-            client: apolloClient
-        )
-        
-        let liveEventStatsChangeManagerOutputHandler = LiveEventStatsChangeManagerOutputHandler(
+        let liveEventStatsChangeManagerOutput = LiveEventStatsChangeManagerOutputHandler(
             controller: controller
         )
         
-        liveEventStatsChangeManager.output = liveEventStatsChangeManagerOutputHandler
+        let liveEventStatsChangeManager = LiveEventStatsChangeManagerFactory.makeManager(
+            client: apolloClient,
+            output: liveEventStatsChangeManagerOutput
+        )
         
-        let videoStatsChangeManager = VideoStatsChangeManagerFactory().makeManager(
+        let liveEventViewerIncreaseManager = LiveEventViewerIncreaseManagerFactory.makeManager(
             client: apolloClient
         )
         
-        let videoStatsChangeManagerOutputHandler = VideoStatsChangeManagerOutputHandler(
-            controller: controller,
-            imageLoader: imageLoader
-        )
-        
-        videoStatsChangeManager.output = videoStatsChangeManagerOutputHandler
-        
-        let liveEventViewerIncreaseManager = LiveEventViewerIncreaseManagerFactory().makeManager(
-            client: apolloClient
-        )
-        
-        let liveEventUserInteractionManager = LiveEventUserInteractionManagerFactory().makeManager(
-            client: apolloClient
-        )
-        
-        let liveEventUserInteractionManagerOutputHandler = LiveEventUserInteractionManagerOutputHandler(
+        let liveEventUserInteractionManagerOutput = LiveEventUserInteractionManagerOutputHandler(
             controller: controller
         )
         
-        liveEventUserInteractionManager.output = liveEventUserInteractionManagerOutputHandler
-        
-        let videoViewerIncreaseManager = VideoViewerIncreaseManagerFactory().makeManager(
-            client: apolloClient
+        let liveEventUserInteractionManager = LiveEventUserInteractionManagerFactory.makeManager(
+            client: apolloClient,
+            output: liveEventUserInteractionManagerOutput
         )
         
-        let videoUserInteractionManager = VideoUserInteractionManagerFactory().makeManager(
-            client: apolloClient
-        )
-        
-        let videoUserInteractionManagerOutputHandler = VideoUserInteractionManagerOutputHandler(
-            controller: controller
-        )
-        
-        videoUserInteractionManager.output = videoUserInteractionManagerOutputHandler
-     
-        let liveEventLikeManager = LiveEventLikeManagerFactory().makeManager(
-            client: apolloClient
-        )
-        
-        let liveEventLikeManagerOutputHandler = LiveEventLikeManagerOutputHandler(
+        let liveEventLikeManagerOutput = LiveEventLikeManagerOutputHandler(
             controller: controller,
             userId: userDefaults.userId,
             liveEventUserInteractionManager: liveEventUserInteractionManager
         )
         
-        liveEventLikeManager.output = liveEventLikeManagerOutputHandler
+        let liveEventLikeManager = LiveEventLikeManagerFactory.makeManager(
+            client: apolloClient,
+            output: liveEventLikeManagerOutput
+        )
         
-        let videoLikeManager = VideoLikeManagerFactory().makeManager(
+        let liveEventViewerCountManagerOutput = LiveEventViewerManagerOutputHandler(
+            controller: controller
+        )
+        
+        let liveEventViewerCountManager = LiveEventViewerManagerFactory.makeManager(
+            client: apolloClient,
+            output: liveEventViewerCountManagerOutput
+        )
+        
+        let chatMessageCreateManager = ChatMessageCreateManagerFactory.makeManager(
             client: apolloClient
         )
         
-        let videoLikeManagerOutputHandler = VideoLikeManagerOutputHandler(
-            controller: controller,
-            userId: userDefaults.userId,
-            videoUserInteractionManager: videoUserInteractionManager
+        let chatMessageLoadingManagerOutput = ChatMessageLoadingManagerOutputHandler(
+            controller: controller
         )
         
-        videoLikeManager.output = videoLikeManagerOutputHandler
-        
-        let chatMessageCreateManager = ChatMessageCreateManagerFactory().makeManager(
-            client: apolloClient
+        let chatLoadingManager = ChatMessageLoadingManagerFactory.makeManager(
+            client: apolloClient,
+            output: chatMessageLoadingManagerOutput
         )
         
-        let playerViewControllerOutputHandler = PlayerViewControllerOutputHandler(
+        let playerViewControllerOutputHandler = LiveEventPlayerViewControllerOutputHandler(
             controller: controller,
-            playerType: playerType,
+            eventId: id,
             userId: userDefaults.userId,
-            videoDetailManager: videoDetailManager,
             liveEventDetailManager: liveEventDetailManager,
-            videoLikeManager: videoLikeManager,
             liveEventLikeManager: liveEventLikeManager,
             chatMessageCreateManager: chatMessageCreateManager,
             onItemsTapped: { [weak controller] items in
@@ -135,48 +99,96 @@ final class PlayerUIComposer {
         
         controller.output = playerViewControllerOutputHandler
         
-        let chatLoadingManager = ChatMessageLoadingManagerFactory().makeManager(
-            client: apolloClient
-        )
-        
-        let chatMessageLoadingManagerOutputHandler = ChatMessageLoadingManagerOutputHandler(
-            controller: controller
-        )
-        
-        chatLoadingManager.output = chatMessageLoadingManagerOutputHandler
-        
-        let liveEventViewerCountManager = LiveEventViewerCountManagerFactory().makeManager(
-            client: apolloClient
-        )
-        
-        let liveEventViewerCountManagerOutputHandler = LiveEventViewerCountManagerOutputHandler(
-            controller: controller
-        )
-        
-        liveEventViewerCountManager.output = liveEventViewerCountManagerOutputHandler
-       
         controller.onViewDidLoad { [weak controller] in
-            switch playerType {
-            case let .Video(id):
-                videoDetailManager.listen(id: id)
-                videoStatsChangeManager.listenVideoStats(id: id)
-                videoDetailManager.loadVideo(id: id)
-                videoViewerIncreaseManager.increaseVideoViewer(id: id, userId: userDefaults.userId)
-                videoUserInteractionManager.loadVideoUserInteraction(videoId: id, userId: userDefaults.userId, initialCall: true)
-            case let .LiveEvent(id):
-                controller?.onShouldUpdateLiveEventViewerCount = {
-                    liveEventViewerCountManager.loadViewerCount(eventId: id)
-                }
-               
-                liveEventDetailManager.listen(id: id)
-                chatLoadingManager.listen(eventId: id)
-                chatLoadingManager.load(eventId: id)
-                liveEventStatsChangeManager.listenLiveEventStats(id: id)
-                liveEventDetailManager.loadEventDetail(id: id)
-                liveEventViewerIncreaseManager.increaseLiveEventViewer(id: id, userId: userDefaults.userId)
-                liveEventUserInteractionManager.loadLiveEventUserInteraction(liveEventId: id, userId: userDefaults.userId, initialCall: true)
+            controller?.onShouldUpdateLiveEventViewerCount = {
+                liveEventViewerCountManager.loadViewerCount(eventId: id)
             }
-        } */
+           
+            liveEventDetailManager.listen(id: id)
+            chatLoadingManager.listen(eventId: id)
+            chatLoadingManager.load(eventId: id)
+            liveEventStatsChangeManager.listenLiveEventStats(id: id)
+            liveEventDetailManager.loadEventDetail(id: id)
+            liveEventViewerIncreaseManager.increaseLiveEventViewer(id: id, userId: userDefaults.userId)
+            liveEventUserInteractionManager.loadLiveEventUserInteraction(liveEventId: id, userId: userDefaults.userId, initialCall: true)
+        }
+        
+        return controller
+    }
+    
+    static func makeVideoPlayerViewController(id: String,
+                                              onItemsTapped: @escaping ([Item], PlayerViewController?) -> Void) -> PlayerViewController {
+        
+        let apolloClient = CMLApolloClient.shared.apollo
+        let userDefaults = CMLUserDefaults()
+        let imageLoader = SDWebImageLoader()
+        
+        let controller = PlayerViewController()
+        
+        let videoDetailManagerOutput = VideoDetailManagerOutputHandler(
+            controller: controller,
+            imageLoader: imageLoader
+        )
+        
+        let videoDetailManager = VideoDetailManagerFactory.makeManager(
+            client: apolloClient,
+            output: videoDetailManagerOutput
+        )
+        
+        let videoStatsChangeManagerOutput = VideoStatsChangeManagerOutputHandler(
+            controller: controller,
+            imageLoader: imageLoader
+        )
+        
+        let videoStatsChangeManager = VideoStatsChangeManagerFactory.makeManager(
+            client: apolloClient,
+            output: videoStatsChangeManagerOutput
+        )
+        
+        let videoViewerIncreaseManager = VideoViewerIncreaseManagerFactory.makeManager(
+            client: apolloClient
+        )
+        
+        let videoUserInteractionManagerOutput = VideoUserInteractionManagerOutputHandler(
+            controller: controller
+        )
+        
+        let videoUserInteractionManager = VideoUserInteractionManagerFactory.makeManager(
+            client: apolloClient,
+            output: videoUserInteractionManagerOutput
+        )
+        
+        let videoLikeManagerOutput = VideoLikeManagerOutputHandler(
+            controller: controller,
+            userId: userDefaults.userId,
+            videoUserInteractionManager: videoUserInteractionManager
+        )
+        
+        let videoLikeManager = VideoLikeManagerFactory().makeManager(
+            client: apolloClient,
+            output: videoLikeManagerOutput
+        )
+        
+        let playerViewControllerOutputHandler = VideoPlayerViewControllerOutputHandler(
+            controller: controller,
+            videoId: id,
+            userId: userDefaults.userId,
+            videoDetailManager: videoDetailManager,
+            videoLikeManager: videoLikeManager,
+            onItemsTapped: { [weak controller] items in
+                onItemsTapped(items, controller)
+            }
+        )
+        
+        controller.output = playerViewControllerOutputHandler
+        
+        controller.onViewDidLoad { 
+            videoDetailManager.listen(id: id)
+            videoStatsChangeManager.listenVideoStats(id: id)
+            videoDetailManager.loadVideo(id: id)
+            videoViewerIncreaseManager.increaseVideoViewer(id: id, userId: userDefaults.userId)
+            videoUserInteractionManager.loadVideoUserInteraction(videoId: id, userId: userDefaults.userId, initialCall: true)
+        }
         
         return controller
     }

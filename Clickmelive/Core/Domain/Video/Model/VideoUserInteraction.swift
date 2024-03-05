@@ -7,6 +7,6 @@
 
 import Foundation
 
-public struct VideoUserInteraction {
+struct VideoUserInteraction {
     let like: Bool
 }

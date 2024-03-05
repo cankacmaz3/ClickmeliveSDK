@@ -7,14 +7,14 @@
 
 import Foundation
 
-public final class LiveEventUserInteractionViewModel {
+final class LiveEventUserInteractionViewModel {
     private let model: LiveEventUserInteraction
     
-    public init(model: LiveEventUserInteraction) {
+    init(model: LiveEventUserInteraction) {
         self.model = model
     }
     
-    public var like: Bool {
+    var like: Bool {
         model.like
     }
 }
