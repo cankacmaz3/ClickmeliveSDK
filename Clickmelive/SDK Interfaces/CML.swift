@@ -8,6 +8,7 @@
 public class CML {
     public static let shared = CML()
 
+    static var playerFlow: PlayerFlow?
     private var options: CMLOptions?
 
     private init() {}
@@ -45,7 +46,15 @@ extension CML {
 }
 
 extension CML {
-    static func startPlayer(cmlPlayerParams: CMLPlayerParams, cmlPlayerUIOptions: CMLPlayerUIOptions, cmlChatOptions: CMLChatOptions) {
-        
+    public static func startPlayer(cmlPlayerParams: CMLPlayerParams, cmlPlayerUIOptions: CMLPlayerUIOptions, cmlChatOptions: CMLChatOptions) {
+        if let playerType = cmlPlayerParams.getType() {
+            playerFlow = PlayerFlow(playerType: playerType)
+            
+            playerFlow?.teardown = { coordinator in
+                playerFlow = nil
+            }
+            
+            playerFlow?.start()
+        }
     }
 }

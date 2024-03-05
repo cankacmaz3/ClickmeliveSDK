@@ -16,6 +16,8 @@ public class CMLPlayerUIOptions {
     private init() {}
     
     public class Builder {
+        public init() {}
+        
         private var options = CMLPlayerUIOptions()
         
         public func isViewerCountVisible(_ visible: Bool) -> Builder {

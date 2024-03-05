@@ -11,6 +11,8 @@ public class CMLChatOptions {
     private init() {}
     
     public class Builder {
+        public init() {}
+        
         private var options = CMLChatOptions()
         
         public func setUsername(_ username: String) -> Builder {

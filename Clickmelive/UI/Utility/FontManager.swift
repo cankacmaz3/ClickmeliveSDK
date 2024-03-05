@@ -8,10 +8,10 @@
 import UIKit
 
 public enum Fonts: String {
-    case light = "Helvetica-Light"
-    case regular = "Helvetica"
-    case medium = "Helvetica-Medium"
-    case bold = "Helvetica-Bold"
+    case light
+    case regular
+    case medium
+    case bold
 }
 
 public struct FontManager {

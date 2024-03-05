@@ -13,6 +13,8 @@ public class CMLPlayerParams {
     public class Builder {
         private var params = CMLPlayerParams()
         
+        public init() {}
+        
         public func setType(_ playerType: PlayerType) -> Builder {
             params.playerType = playerType
             return self
@@ -21,5 +23,9 @@ public class CMLPlayerParams {
         public func build() -> CMLPlayerParams {
             return params
         }
+    }
+    
+    public func getType() -> PlayerType? {
+        return playerType
     }
 }

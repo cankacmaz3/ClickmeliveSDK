@@ -7,6 +7,6 @@
 
 import Foundation
 
-public class SharedIOSModuleBundle {
+class SharedIOSModuleBundle {
     // This class doesn't need to contain any logic.
 }

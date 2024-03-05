@@ -5,7 +5,6 @@
 //  Created by Can on 4.03.2024.
 //
 
-/*
 import Foundation
 import UIKit
 
@@ -15,13 +14,13 @@ final class PlayerUIComposer {
     static func makePlayerViewController(playerType: PlayerType,
                                          onItemsTapped: @escaping ([Item], PlayerViewController?) -> Void) -> PlayerViewController {
         
-        let apolloClient = CMLApolloClient.shared.apollo
+        /*let apolloClient = CMLApolloClient.shared.apollo
         let userDefaults = CMLUserDefaults()
-        let imageLoader = SDWebImageLoader()
+        let imageLoader = SDWebImageLoader() */
         
         let controller = PlayerViewController()
         
-        let liveEventDetailManager = LiveEventDetailManagerFactory().makeManager(
+        /*let liveEventDetailManager = LiveEventDetailManagerFactory().makeManager(
             client: apolloClient
         )
         
@@ -177,9 +176,8 @@ final class PlayerUIComposer {
                 liveEventViewerIncreaseManager.increaseLiveEventViewer(id: id, userId: userDefaults.userId)
                 liveEventUserInteractionManager.loadLiveEventUserInteraction(liveEventId: id, userId: userDefaults.userId, initialCall: true)
             }
-        }
+        } */
         
         return controller
     }
 }
-*/
