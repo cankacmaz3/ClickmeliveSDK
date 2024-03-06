@@ -11,11 +11,12 @@ enum AppImage: String {
     case iconLiked
     case iconLive
     case iconMinimize
+    case iconPipClose
     case iconRightArrow
     case iconScrollDown
     case iconSend
     case iconVideo
     case iconViewers
     case imgItems
-    case iconPipClose
+    case imgPlay
 }

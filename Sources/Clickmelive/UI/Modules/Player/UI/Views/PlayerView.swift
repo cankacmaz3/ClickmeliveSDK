@@ -213,6 +213,7 @@ extension PlayerView {
     
     @objc private func configureControlGestures() {
         videoPlayer?.state == .playing ? pauseVideoPlayback(): startVideoPlayback()
+        ivPlay.isHidden = videoPlayer?.state != .playing
     }
 }
 
@@ -418,6 +419,11 @@ class PlayerView: _View {
         return iv
     }()
     
+    private(set) lazy var ivPlay: UIImageView = {
+        let iv = UIImageView()
+        return iv
+    }()
+    
     private(set) lazy var ivsVideoPlayerView: IVSPlayerView = {
         let view = IVSPlayerView()
         return view
@@ -449,6 +455,8 @@ class PlayerView: _View {
         backgroundColor = .appColor(.appBlack)
         ivThumbnail.contentMode = .scaleAspectFill
         
+        ivPlay.isHidden = true
+        
         ivsVideoPlayerView.backgroundColor = .clear
         ivsLivePlayerView.backgroundColor = .clear
         
@@ -462,11 +470,17 @@ class PlayerView: _View {
     }
     
     override func setUpLayout() {
-        [ivThumbnail, ivsVideoPlayerView, ivsLivePlayerView, bufferIndicator, seekSlider].forEach {
+        super.setUpLayout()
+        
+        [ivThumbnail, ivsVideoPlayerView, ivsLivePlayerView, bufferIndicator, seekSlider, ivPlay].forEach {
             addSubview($0)
         }
         
         ivThumbnail.fillSuperview()
+        
+        ivPlay.constrainHeight(80)
+        ivPlay.constrainWidth(80)
+        ivPlay.anchorCenterSuperview()
         
         ivsVideoPlayerView.fillSuperview()
         ivsLivePlayerView.fillSuperview()
@@ -474,5 +488,10 @@ class PlayerView: _View {
         bufferIndicator.anchorCenterSuperview()
         
         seekSlider.anchor(left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor)
+    }
+    
+    override func updateContent() {
+        super.updateContent()
+        ivPlay.image = .appImage(.imgPlay)
     }
 }
