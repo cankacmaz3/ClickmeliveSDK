@@ -9,7 +9,7 @@ import UIKit
 
 extension PlayerVCView {
     func configure(with viewModel: VideoViewModel, imageLoader: ImageLoader) {
-        lblTitle.text = viewModel.title
+        titleView.configure(with: viewModel.title)
         
         itemsView.configure(with: viewModel, imageLoader: imageLoader)
         playerView.configure(with: viewModel, imageLoader: imageLoader)
@@ -32,7 +32,7 @@ extension PlayerVCView {
 
 extension PlayerVCView {
     func configure(with viewModel: LiveEventViewModel, imageLoader: ImageLoader) {
-        lblTitle.text = viewModel.title
+        titleView.configure(with: viewModel.title)
         
         totalViewerView.configure(viewModel: viewModel)
         likeView.configure(with: viewModel)
@@ -93,9 +93,9 @@ class PlayerVCView: _View {
         return button
     }()
     
-    private(set) lazy var lblTitle: UILabel = {
-        let label = UILabel()
-        return label
+    private(set) lazy var titleView: TitleView = {
+        let view = TitleView()
+        return view
     }()
     
     private(set) lazy var bottomStackView: UIStackView = {
@@ -155,9 +155,6 @@ class PlayerVCView: _View {
         bottomStackView.spacing = 16
         bottomStackView.distribution = .fill
         
-        lblTitle.textColor = .appColor(.appPrimaryText)
-        lblTitle.font = .appFont(.medium, size: 14)
-        
         tvMessage.isHidden = true
         pipInteractionOverlay.isHidden = true
     }
@@ -174,7 +171,7 @@ class PlayerVCView: _View {
         
         pipInteractionOverlay.addSubview(btnPipClose)
         
-        [playerView, btnMinimize, lblTitle, bottomStackView, statusView, totalViewerView, likeView, chatView, tvMessage, pipInteractionOverlay].forEach {
+        [playerView, btnMinimize, titleView, bottomStackView, statusView, totalViewerView, likeView, chatView, tvMessage, pipInteractionOverlay].forEach {
             addSubview($0)
         }
         
@@ -182,7 +179,8 @@ class PlayerVCView: _View {
         
         btnMinimize.anchor(top: safeAreaLayoutGuide.topAnchor, left: leftAnchor, topConstant: 28, leftConstant: 16, widthConstant: 20, heightConstant: 20)
         
-        lblTitle.anchor(top: btnMinimize.bottomAnchor, left: leftAnchor, right: rightAnchor, topConstant: 16, leftConstant: 16, rightConstant: 16)
+        titleView.anchor(top: btnMinimize.bottomAnchor, left: leftAnchor, topConstant: 16, leftConstant: 16)
+        addConstraint(NSLayoutConstraint(item: titleView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 0.5, constant: 1.0))
         
         bottomStackView.anchor(left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, leftConstant: 16, bottomConstant: 30, rightConstant: 16)
         

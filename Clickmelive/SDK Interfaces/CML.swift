@@ -57,6 +57,9 @@ extension CML {
 
 extension CML {
     public static func startPlayer(cmlPlayerParams: CMLPlayerParams, cmlPlayerUIOptions: CMLPlayerUIOptions, cmlChatOptions: CMLChatOptions) {
+        
+        setupPlayerUIOptions(with: cmlPlayerUIOptions)
+        
         playerFlow = PlayerFlow(cmlPlayerParams: cmlPlayerParams, cmlChatOptions: cmlChatOptions)
         
         playerFlow?.teardown = { coordinator in
@@ -64,5 +67,13 @@ extension CML {
         }
         
         playerFlow?.start()
+    }
+    
+    private static func setupPlayerUIOptions(with options: CMLPlayerUIOptions) {
+        Components.default.likeView = options.getIsLikeVisible() ? LikeView.self: HiddenLikeView.self
+        Components.default.totalViewerView = options.getIsViewerCountVisible() ? TotalViewerView.self: HiddenTotalViewerView.self
+        Components.default.itemsView = options.getIsProductsVisible() ? ItemsView.self: HiddenItemsView.self
+        Components.default.statusView = options.getIsEventTypeVisible() ? StatusView.self: HiddenStatusView.self
+        Components.default.titleView = options.getIsTitleVisible() ? TitleView.self: HiddenTitleView.self
     }
 }

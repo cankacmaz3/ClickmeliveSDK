@@ -86,6 +86,8 @@
 		362E0C642B97C183002BE25C /* VideoLikeManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362E0C632B97C183002BE25C /* VideoLikeManagerFactory.swift */; };
 		362E0C662B97C1BA002BE25C /* GraphQLVideoLiker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362E0C652B97C1BA002BE25C /* GraphQLVideoLiker.swift */; };
 		362E0C682B97C1D6002BE25C /* LikeVideoMutationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362E0C672B97C1D6002BE25C /* LikeVideoMutationMapper.swift */; };
+		362E0C6A2B97E7DB002BE25C /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362E0C692B97E7DB002BE25C /* TitleView.swift */; };
+		362E0C6C2B97E9D9002BE25C /* CustomPlayerUIViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362E0C6B2B97E9D9002BE25C /* CustomPlayerUIViews.swift */; };
 		366D0B0A2B93750700A42E2B /* LiveEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0B092B93750700A42E2B /* LiveEvent.swift */; };
 		366D0B0C2B93752900A42E2B /* LiveEventStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0B0B2B93752900A42E2B /* LiveEventStatus.swift */; };
 		366D0B0F2B93754F00A42E2B /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0B0E2B93754F00A42E2B /* Tag.swift */; };
@@ -313,6 +315,8 @@
 		362E0C632B97C183002BE25C /* VideoLikeManagerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLikeManagerFactory.swift; sourceTree = "<group>"; };
 		362E0C652B97C1BA002BE25C /* GraphQLVideoLiker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLVideoLiker.swift; sourceTree = "<group>"; };
 		362E0C672B97C1D6002BE25C /* LikeVideoMutationMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeVideoMutationMapper.swift; sourceTree = "<group>"; };
+		362E0C692B97E7DB002BE25C /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		362E0C6B2B97E9D9002BE25C /* CustomPlayerUIViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlayerUIViews.swift; sourceTree = "<group>"; };
 		366D0B092B93750700A42E2B /* LiveEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEvent.swift; sourceTree = "<group>"; };
 		366D0B0B2B93752900A42E2B /* LiveEventStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventStatus.swift; sourceTree = "<group>"; };
 		366D0B0E2B93754F00A42E2B /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -1181,6 +1185,7 @@
 				366D0C082B9536AA00A42E2B /* CMLLiveEventsQuery.swift */,
 				36EDB6392B971AED00F30CAD /* CMLPlayerParams.swift */,
 				36EDB63B2B97282F00F30CAD /* CMLPlayerUIOptions.swift */,
+				362E0C6B2B97E9D9002BE25C /* CustomPlayerUIViews.swift */,
 				366D0C202B95421300A42E2B /* CMLVideosQuery.swift */,
 			);
 			path = "SDK Interfaces";
@@ -1233,6 +1238,7 @@
 				36EDB5A92B95F93000F30CAD /* PlayerVCView.swift */,
 				36EDB5AA2B95F93000F30CAD /* PlayerView.swift */,
 				36EDB5AB2B95F93000F30CAD /* ItemsView.swift */,
+				362E0C692B97E7DB002BE25C /* TitleView.swift */,
 				36EDB5AC2B95F93000F30CAD /* TotalViewerView.swift */,
 			);
 			path = Views;
@@ -1586,6 +1592,7 @@
 				36EDB63C2B97282F00F30CAD /* CMLPlayerUIOptions.swift in Sources */,
 				362E0BA92B972EA0002BE25C /* PlayerViewController+PIPUsable.swift in Sources */,
 				362E0BEB2B9762FC002BE25C /* GraphQLLiveEventStateChangeListener.swift in Sources */,
+				362E0C6A2B97E7DB002BE25C /* TitleView.swift in Sources */,
 				362E0BE22B976011002BE25C /* GraphQLLiveEventUpdateListener.swift in Sources */,
 				36EDB6212B96915800F30CAD /* ChatView.swift in Sources */,
 				36EDB5C42B95F98F00F30CAD /* VideoViewModel.swift in Sources */,
@@ -1631,6 +1638,7 @@
 				366D0B3F2B93933B00A42E2B /* LiveEventUpdateListener.swift in Sources */,
 				36EDB60D2B96911D00F30CAD /* ImageLoader.swift in Sources */,
 				366D0B1C2B9389BE00A42E2B /* LikeLiveEventMutationMapper.swift in Sources */,
+				362E0C6C2B97E9D9002BE25C /* CustomPlayerUIViews.swift in Sources */,
 				362E0C582B97BFA5002BE25C /* VideoUserInteractionLoader.swift in Sources */,
 				36EDB6102B96912B00F30CAD /* CollectionCellController.swift in Sources */,
 				362E0BAC2B972ED6002BE25C /* ItemsFlow.swift in Sources */,

@@ -17,6 +17,7 @@ struct Components {
     var playerVCView: PlayerVCView.Type = PlayerVCView.self
     var playerView: PlayerView.Type = PlayerView.self
    
+    var titleView: TitleView.Type = TitleView.self
     var totalViewerView: TotalViewerView.Type = TotalViewerView.self
     var likeView: LikeView.Type = LikeView.self
     var statusView: StatusView.Type = StatusView.self
