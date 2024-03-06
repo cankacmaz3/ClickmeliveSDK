@@ -351,14 +351,11 @@ extension PlayerView {
     private func updateForDuration(duration: CMTime) {
         if duration.isIndefinite {
             ivsVideoPlayerView.isUserInteractionEnabled = true
-            seekSlider.isHidden = false
             seek(to: duration)
         } else if duration.isNumeric {
             ivsVideoPlayerView.isUserInteractionEnabled = true
-            seekSlider.isHidden = false
         } else {
             ivsVideoPlayerView.isUserInteractionEnabled = false
-            seekSlider.isHidden = true
         }
     }
     
