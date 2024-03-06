@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		36206E492B936B7100F76521 /* GraphQLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36206E482B936B7100F76521 /* GraphQLClient.swift */; };
-		36206E752B93702B00F76521 /* ClickmeliveSaasAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 36206E742B93702B00F76521 /* ClickmeliveSaasAPI */; };
 		362E0BA52B972E6A002BE25C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362E0BA42B972E6A002BE25C /* Coordinator.swift */; };
 		362E0BA72B972E7C002BE25C /* PlayerFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362E0BA62B972E7C002BE25C /* PlayerFlow.swift */; };
 		362E0BA92B972EA0002BE25C /* PlayerViewController+PIPUsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362E0BA82B972EA0002BE25C /* PlayerViewController+PIPUsable.swift */; };
@@ -115,39 +114,6 @@
 		366D0BAF2B9493AB00A42E2B /* SearchLiveEventsQueryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BAE2B9493AB00A42E2B /* SearchLiveEventsQueryMapper.swift */; };
 		366D0BB22B94945F00A42E2B /* GraphQLLiveEventFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BB12B94945F00A42E2B /* GraphQLLiveEventFinder.swift */; };
 		366D0BB42B9494D200A42E2B /* LiveEventFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BB32B9494D200A42E2B /* LiveEventFinder.swift */; };
-		366D0BBE2B94CB9500A42E2B /* ChatBanGQL.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BBD2B94CB9500A42E2B /* ChatBanGQL.graphql */; };
-		366D0BC02B94CBB300A42E2B /* ChatMessageGQLFragment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BBF2B94CBB300A42E2B /* ChatMessageGQLFragment.graphql */; };
-		366D0BC22B94CBCA00A42E2B /* CreateChatMessage.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BC12B94CBCA00A42E2B /* CreateChatMessage.graphql */; };
-		366D0BC42B94CC1400A42E2B /* GetChatBan.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BC32B94CC1400A42E2B /* GetChatBan.graphql */; };
-		366D0BC62B94CC2800A42E2B /* GetChatRoomContentByEventId.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BC52B94CC2800A42E2B /* GetChatRoomContentByEventId.graphql */; };
-		366D0BC82B94CC3B00A42E2B /* GetItemsLiveEvent.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BC72B94CC3B00A42E2B /* GetItemsLiveEvent.graphql */; };
-		366D0BCA2B94CC4E00A42E2B /* GetItemsVideo.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BC92B94CC4E00A42E2B /* GetItemsVideo.graphql */; };
-		366D0BCC2B94CC9A00A42E2B /* GetLiveEventById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BCB2B94CC9A00A42E2B /* GetLiveEventById.graphql */; };
-		366D0BCE2B94CCAA00A42E2B /* GetLiveEvents.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BCD2B94CCAA00A42E2B /* GetLiveEvents.graphql */; };
-		366D0BD02B94CCBF00A42E2B /* GetLiveViewerCount.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BCF2B94CCBF00A42E2B /* GetLiveViewerCount.graphql */; };
-		366D0BD22B94CCD000A42E2B /* GetTags.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BD12B94CCD000A42E2B /* GetTags.graphql */; };
-		366D0BD42B94CCE500A42E2B /* GetUserInteractionLiveEvent.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BD32B94CCE500A42E2B /* GetUserInteractionLiveEvent.graphql */; };
-		366D0BD62B94CCF900A42E2B /* GetUserInteractionVideo.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BD52B94CCF900A42E2B /* GetUserInteractionVideo.graphql */; };
-		366D0BD82B94CD2600A42E2B /* GetVideoById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BD72B94CD2600A42E2B /* GetVideoById.graphql */; };
-		366D0BDA2B94CD4200A42E2B /* GetVideos.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BD92B94CD4200A42E2B /* GetVideos.graphql */; };
-		366D0BDC2B94CD5E00A42E2B /* IncreaseViewerLiveEvent.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BDB2B94CD5E00A42E2B /* IncreaseViewerLiveEvent.graphql */; };
-		366D0BDE2B94CD7A00A42E2B /* IncreaseViewerVideo.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BDD2B94CD7A00A42E2B /* IncreaseViewerVideo.graphql */; };
-		366D0BE02B94CD8C00A42E2B /* LikeLiveEvent.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BDF2B94CD8C00A42E2B /* LikeLiveEvent.graphql */; };
-		366D0BE22B94CD9B00A42E2B /* LikeVideo.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BE12B94CD9B00A42E2B /* LikeVideo.graphql */; };
-		366D0BE42B94CDAA00A42E2B /* LiveEventGQLFragment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BE32B94CDAA00A42E2B /* LiveEventGQLFragment.graphql */; };
-		366D0BE62B94CDBF00A42E2B /* MetadataGQLFragment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BE52B94CDBF00A42E2B /* MetadataGQLFragment.graphql */; };
-		366D0BE82B94CDCD00A42E2B /* OnCreateChatMessage.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BE72B94CDCD00A42E2B /* OnCreateChatMessage.graphql */; };
-		366D0BEA2B94CDDE00A42E2B /* OnCreateChatMessageBan.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BE92B94CDDE00A42E2B /* OnCreateChatMessageBan.graphql */; };
-		366D0BEC2B94CDEC00A42E2B /* OnEventItemUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BEB2B94CDEC00A42E2B /* OnEventItemUpdate.graphql */; };
-		366D0BEE2B94CDFC00A42E2B /* OnLiveEventStatsChange.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BED2B94CDFC00A42E2B /* OnLiveEventStatsChange.graphql */; };
-		366D0BF02B94CE1500A42E2B /* OnLiveEventUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BEF2B94CE1500A42E2B /* OnLiveEventUpdate.graphql */; };
-		366D0BF22B94CE2400A42E2B /* OnVideoStatsChange.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BF12B94CE2400A42E2B /* OnVideoStatsChange.graphql */; };
-		366D0BF42B94CE3200A42E2B /* OnVideoUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BF32B94CE3200A42E2B /* OnVideoUpdate.graphql */; };
-		366D0BF62B94CE5400A42E2B /* SearchLiveEvents.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BF52B94CE5400A42E2B /* SearchLiveEvents.graphql */; };
-		366D0BF82B94CE6A00A42E2B /* SearchVideos.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BF72B94CE6A00A42E2B /* SearchVideos.graphql */; };
-		366D0BFA2B94CE8000A42E2B /* VideoGQLFragment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BF92B94CE8000A42E2B /* VideoGQLFragment.graphql */; };
-		366D0BFC2B94CE9400A42E2B /* EventTagGQLFragment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BFB2B94CE9400A42E2B /* EventTagGQLFragment.graphql */; };
-		366D0BFE2B94CEA200A42E2B /* EventItemGQLFragment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 366D0BFD2B94CEA200A42E2B /* EventItemGQLFragment.graphql */; };
 		366D0C012B9526B700A42E2B /* LiveEventGQL+DomainConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C002B9526B700A42E2B /* LiveEventGQL+DomainConversion.swift */; };
 		366D0C032B95270500A42E2B /* EventTagGQL+DomainConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C022B95270500A42E2B /* EventTagGQL+DomainConversion.swift */; };
 		366D0C052B95276B00A42E2B /* EventItemGQL+DomainConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C042B95276B00A42E2B /* EventItemGQL+DomainConversion.swift */; };
@@ -159,6 +125,8 @@
 		366D0C1F2B9541BA00A42E2B /* VideoFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C1E2B9541BA00A42E2B /* VideoFinder.swift */; };
 		366D0C212B95421300A42E2B /* CMLVideosQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C202B95421300A42E2B /* CMLVideosQuery.swift */; };
 		366D0C232B95426F00A42E2B /* GraphQLVideoFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C222B95426F00A42E2B /* GraphQLVideoFinder.swift */; };
+		368BDE742B97FCA5009D5129 /* ClickmeliveSaasAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 368BDE732B97FCA5009D5129 /* ClickmeliveSaasAPI */; };
+		368BDE792B97FD71009D5129 /* AmazonIVSPlayer.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368BDE782B97FD71009D5129 /* AmazonIVSPlayer.xcframework */; };
 		3695F0382B935FFB003925F1 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F0372B935FFB003925F1 /* Apollo */; };
 		3695F03A2B935FFB003925F1 /* ApolloAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F0392B935FFB003925F1 /* ApolloAPI */; };
 		3695F03C2B935FFB003925F1 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F03B2B935FFB003925F1 /* ApolloWebSocket */; };
@@ -175,7 +143,6 @@
 		36EDB5982B95F8FE00F30CAD /* Date+CoreExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB5942B95F8FE00F30CAD /* Date+CoreExtensions.swift */; };
 		36EDB5C42B95F98F00F30CAD /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB5BF2B95F98F00F30CAD /* VideoViewModel.swift */; };
 		36EDB5C52B95F98F00F30CAD /* VideoLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB5C12B95F98F00F30CAD /* VideoLocalization.swift */; };
-		36EDB5C62B95F98F00F30CAD /* Video.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 36EDB5C22B95F98F00F30CAD /* Video.xcstrings */; };
 		36EDB5C72B95F98F00F30CAD /* VideoUserInteractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB5C32B95F98F00F30CAD /* VideoUserInteractionViewModel.swift */; };
 		36EDB5CF2B95F9A500F30CAD /* LiveEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB5C92B95F9A500F30CAD /* LiveEventViewModel.swift */; };
 		36EDB5D02B95F9A500F30CAD /* LiveEventViewerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB5CA2B95F9A500F30CAD /* LiveEventViewerViewModel.swift */; };
@@ -223,7 +190,6 @@
 		36EDB6302B96916500F30CAD /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BA02B94800100A42E2B /* AppColor.swift */; };
 		36EDB6312B96916500F30CAD /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BA22B94801000A42E2B /* AppImage.swift */; };
 		36EDB6322B96916500F30CAD /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BA42B94802200A42E2B /* FontManager.swift */; };
-		36EDB6332B96916D00F30CAD /* SharedIOSModuleBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BA82B94809500A42E2B /* SharedIOSModuleBundle.swift */; };
 		36EDB6362B96956C00F30CAD /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB6352B96956C00F30CAD /* APIConfiguration.swift */; };
 		36EDB6382B96957400F30CAD /* APIConfigurationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB6372B96957400F30CAD /* APIConfigurationDTO.swift */; };
 		36EDB63A2B971AED00F30CAD /* CMLPlayerParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB6392B971AED00F30CAD /* CMLPlayerParams.swift */; };
@@ -246,7 +212,6 @@
 		362E0BAE2B972EF4002BE25C /* ItemsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsUIComposer.swift; sourceTree = "<group>"; };
 		362E0BB12B972F2D002BE25C /* WeakRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRef.swift; sourceTree = "<group>"; };
 		362E0BB42B972F54002BE25C /* WeakRef+ItemCellControllerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeakRef+ItemCellControllerOutput.swift"; sourceTree = "<group>"; };
-		362E0BB72B9738D1002BE25C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		362E0BCD2B975D96002BE25C /* SDWebImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDWebImageLoader.swift; sourceTree = "<group>"; };
 		362E0BCF2B975DCC002BE25C /* CMLUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLUserDefaults.swift; sourceTree = "<group>"; };
 		362E0BD42B975EC2002BE25C /* LiveEventDetailManagerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventDetailManagerFactory.swift; sourceTree = "<group>"; };
@@ -365,7 +330,6 @@
 		366D0BA22B94801000A42E2B /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		366D0BA42B94802200A42E2B /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		366D0BA62B94804000A42E2B /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
-		366D0BA82B94809500A42E2B /* SharedIOSModuleBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIOSModuleBundle.swift; sourceTree = "<group>"; };
 		366D0BAE2B9493AB00A42E2B /* SearchLiveEventsQueryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLiveEventsQueryMapper.swift; sourceTree = "<group>"; };
 		366D0BB12B94945F00A42E2B /* GraphQLLiveEventFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLLiveEventFinder.swift; sourceTree = "<group>"; };
 		366D0BB32B9494D200A42E2B /* LiveEventFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventFinder.swift; sourceTree = "<group>"; };
@@ -413,6 +377,7 @@
 		366D0C1E2B9541BA00A42E2B /* VideoFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFinder.swift; sourceTree = "<group>"; };
 		366D0C202B95421300A42E2B /* CMLVideosQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLVideosQuery.swift; sourceTree = "<group>"; };
 		366D0C222B95426F00A42E2B /* GraphQLVideoFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLVideoFinder.swift; sourceTree = "<group>"; };
+		368BDE782B97FD71009D5129 /* AmazonIVSPlayer.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AmazonIVSPlayer.xcframework; sourceTree = "<group>"; };
 		3695F01F2B935DDD003925F1 /* Clickmelive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Clickmelive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3695F03D2B936027003925F1 /* CMLApolloClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLApolloClient.swift; sourceTree = "<group>"; };
 		3695F0402B936072003925F1 /* AuthorizationInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInterceptor.swift; sourceTree = "<group>"; };
@@ -469,11 +434,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36206E752B93702B00F76521 /* ClickmeliveSaasAPI in Frameworks */,
 				3695F03A2B935FFB003925F1 /* ApolloAPI in Frameworks */,
+				368BDE792B97FD71009D5129 /* AmazonIVSPlayer.xcframework in Frameworks */,
 				3695F03C2B935FFB003925F1 /* ApolloWebSocket in Frameworks */,
 				3695F0382B935FFB003925F1 /* Apollo in Frameworks */,
 				362E0BCC2B975D6B002BE25C /* SDWebImage in Frameworks */,
+				368BDE742B97FCA5009D5129 /* ClickmeliveSaasAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,6 +728,14 @@
 			path = Composers;
 			sourceTree = "<group>";
 		};
+		362E0C7A2B97F648002BE25C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3695F0212B935DDD003925F1 /* Clickmelive */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		366D0B032B93741B00A42E2B /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -885,6 +859,7 @@
 		366D0B612B94779300A42E2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				368BDE782B97FD71009D5129 /* AmazonIVSPlayer.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1120,7 +1095,7 @@
 		3695F0152B935DDD003925F1 = {
 			isa = PBXGroup;
 			children = (
-				3695F0212B935DDD003925F1 /* Clickmelive */,
+				362E0C7A2B97F648002BE25C /* Sources */,
 				36206E4A2B936E5400F76521 /* graphql */,
 				3695F0202B935DDD003925F1 /* Products */,
 				366D0B612B94779300A42E2B /* Frameworks */,
@@ -1138,13 +1113,11 @@
 		3695F0212B935DDD003925F1 /* Clickmelive */ = {
 			isa = PBXGroup;
 			children = (
-				362E0BB72B9738D1002BE25C /* Info.plist */,
 				36EDB60B2B96908300F30CAD /* Core */,
 				36EDB60C2B9690B600F30CAD /* UI */,
 				36EDB6422B972AC000F30CAD /* PIP Kit */,
 				3695F0492B93611A003925F1 /* SDK Interfaces */,
 				3695F0462B9360EB003925F1 /* Utility */,
-				366D0BA82B94809500A42E2B /* SharedIOSModuleBundle.swift */,
 			);
 			path = Clickmelive;
 			sourceTree = "<group>";
@@ -1422,8 +1395,8 @@
 				3695F0372B935FFB003925F1 /* Apollo */,
 				3695F0392B935FFB003925F1 /* ApolloAPI */,
 				3695F03B2B935FFB003925F1 /* ApolloWebSocket */,
-				36206E742B93702B00F76521 /* ClickmeliveSaasAPI */,
 				362E0BCB2B975D6B002BE25C /* SDWebImage */,
+				368BDE732B97FCA5009D5129 /* ClickmeliveSaasAPI */,
 			);
 			productName = Clickmelive;
 			productReference = 3695F01F2B935DDD003925F1 /* Clickmelive.framework */;
@@ -1455,8 +1428,8 @@
 			mainGroup = 3695F0152B935DDD003925F1;
 			packageReferences = (
 				3695F0362B935FFB003925F1 /* XCRemoteSwiftPackageReference "apollo-ios" */,
-				36206E732B93702B00F76521 /* XCLocalSwiftPackageReference "ClickmeliveSaasAPI" */,
 				362E0BCA2B975D6B002BE25C /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				368BDE722B97FCA5009D5129 /* XCLocalSwiftPackageReference "ClickmeliveSaasAPI" */,
 			);
 			productRefGroup = 3695F0202B935DDD003925F1 /* Products */;
 			projectDirPath = "";
@@ -1472,42 +1445,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				366D0BF02B94CE1500A42E2B /* OnLiveEventUpdate.graphql in Resources */,
-				366D0BD02B94CCBF00A42E2B /* GetLiveViewerCount.graphql in Resources */,
 				362E0BB62B9735A6002BE25C /* Shared.xcassets in Resources */,
-				366D0BD62B94CCF900A42E2B /* GetUserInteractionVideo.graphql in Resources */,
-				366D0BD42B94CCE500A42E2B /* GetUserInteractionLiveEvent.graphql in Resources */,
-				366D0BE22B94CD9B00A42E2B /* LikeVideo.graphql in Resources */,
-				366D0BC82B94CC3B00A42E2B /* GetItemsLiveEvent.graphql in Resources */,
-				366D0BCA2B94CC4E00A42E2B /* GetItemsVideo.graphql in Resources */,
-				366D0BC42B94CC1400A42E2B /* GetChatBan.graphql in Resources */,
-				366D0BE42B94CDAA00A42E2B /* LiveEventGQLFragment.graphql in Resources */,
-				366D0BF42B94CE3200A42E2B /* OnVideoUpdate.graphql in Resources */,
-				366D0BD82B94CD2600A42E2B /* GetVideoById.graphql in Resources */,
-				366D0BC22B94CBCA00A42E2B /* CreateChatMessage.graphql in Resources */,
-				366D0BD22B94CCD000A42E2B /* GetTags.graphql in Resources */,
-				366D0BDE2B94CD7A00A42E2B /* IncreaseViewerVideo.graphql in Resources */,
-				366D0BFC2B94CE9400A42E2B /* EventTagGQLFragment.graphql in Resources */,
-				366D0BC62B94CC2800A42E2B /* GetChatRoomContentByEventId.graphql in Resources */,
-				366D0BE02B94CD8C00A42E2B /* LikeLiveEvent.graphql in Resources */,
-				366D0BDC2B94CD5E00A42E2B /* IncreaseViewerLiveEvent.graphql in Resources */,
-				366D0BEC2B94CDEC00A42E2B /* OnEventItemUpdate.graphql in Resources */,
-				36EDB5C62B95F98F00F30CAD /* Video.xcstrings in Resources */,
-				366D0BCE2B94CCAA00A42E2B /* GetLiveEvents.graphql in Resources */,
-				366D0BDA2B94CD4200A42E2B /* GetVideos.graphql in Resources */,
-				366D0BEA2B94CDDE00A42E2B /* OnCreateChatMessageBan.graphql in Resources */,
-				366D0BC02B94CBB300A42E2B /* ChatMessageGQLFragment.graphql in Resources */,
-				366D0BE82B94CDCD00A42E2B /* OnCreateChatMessage.graphql in Resources */,
-				366D0BF22B94CE2400A42E2B /* OnVideoStatsChange.graphql in Resources */,
-				366D0BE62B94CDBF00A42E2B /* MetadataGQLFragment.graphql in Resources */,
-				366D0BF82B94CE6A00A42E2B /* SearchVideos.graphql in Resources */,
-				366D0BBE2B94CB9500A42E2B /* ChatBanGQL.graphql in Resources */,
-				366D0BFA2B94CE8000A42E2B /* VideoGQLFragment.graphql in Resources */,
 				36EDB5D22B95F9A500F30CAD /* LiveEvent.xcstrings in Resources */,
-				366D0BCC2B94CC9A00A42E2B /* GetLiveEventById.graphql in Resources */,
-				366D0BFE2B94CEA200A42E2B /* EventItemGQLFragment.graphql in Resources */,
-				366D0BEE2B94CDFC00A42E2B /* OnLiveEventStatsChange.graphql in Resources */,
-				366D0BF62B94CE5400A42E2B /* SearchLiveEvents.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1676,7 +1615,6 @@
 				362E0BE02B975FDF002BE25C /* GraphQLLiveEventDetailLoader.swift in Sources */,
 				36EDB6492B972B6900F30CAD /* UIWindow+PIPKitExtensions.swift in Sources */,
 				36206E492B936B7100F76521 /* GraphQLClient.swift in Sources */,
-				36EDB6332B96916D00F30CAD /* SharedIOSModuleBundle.swift in Sources */,
 				36EDB6152B96913400F30CAD /* UIFont+UIExtensions.swift in Sources */,
 				362E0C542B97BF24002BE25C /* IncreaseViewerVideoMutationMapper.swift in Sources */,
 				36EDB60F2B96912B00F30CAD /* ListCollectionView.swift in Sources */,
@@ -1848,7 +1786,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Clickmelive/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1884,7 +1821,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Clickmelive/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1929,7 +1865,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		36206E732B93702B00F76521 /* XCLocalSwiftPackageReference "ClickmeliveSaasAPI" */ = {
+		368BDE722B97FCA5009D5129 /* XCLocalSwiftPackageReference "ClickmeliveSaasAPI" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ClickmeliveSaasAPI;
 		};
@@ -1955,14 +1891,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		36206E742B93702B00F76521 /* ClickmeliveSaasAPI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = ClickmeliveSaasAPI;
-		};
 		362E0BCB2B975D6B002BE25C /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 362E0BCA2B975D6B002BE25C /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		368BDE732B97FCA5009D5129 /* ClickmeliveSaasAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ClickmeliveSaasAPI;
 		};
 		3695F0372B935FFB003925F1 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
