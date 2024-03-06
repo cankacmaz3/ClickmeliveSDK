@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LiveEventUserInteractionManagerOutput {
-    func liveEventUserInteractionLoaded(liveEventUserInteraction: LiveEventUserInteraction, initialCall: Bool)
+    func liveEventUserInteractionLoaded(liveEventUserInteraction: LiveEventUserInteraction)
 }
 
 final class LiveEventUserInteractionManager {
@@ -24,11 +24,11 @@ final class LiveEventUserInteractionManager {
 }
 
 extension LiveEventUserInteractionManager {
-    func loadLiveEventUserInteraction(liveEventId: String, userId: String, initialCall: Bool) {
+    func loadLiveEventUserInteraction(liveEventId: String, userId: String) {
         liveEventUserInteractionLoader.load(liveEventId: liveEventId, userId: userId) { [weak self] result in
             switch result {
             case let .success(liveEventUserInteraction):
-                self?.output?.liveEventUserInteractionLoaded(liveEventUserInteraction: liveEventUserInteraction, initialCall: initialCall)
+                self?.output?.liveEventUserInteractionLoaded(liveEventUserInteraction: liveEventUserInteraction)
             case let .failure(error):
                 self?.failureOutput?.failed(error: error)
             }

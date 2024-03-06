@@ -55,8 +55,7 @@ final class PlayerUIComposer {
         
         let liveEventLikeManagerOutput = LiveEventLikeManagerOutputHandler(
             controller: controller,
-            userId: userDefaults.userId,
-            liveEventUserInteractionManager: liveEventUserInteractionManager
+            userId: userDefaults.userId
         )
         
         let liveEventLikeManager = LiveEventLikeManagerFactory.makeManager(
@@ -112,7 +111,7 @@ final class PlayerUIComposer {
             liveEventStatsChangeManager.listenLiveEventStats(id: id)
             liveEventDetailManager.loadEventDetail(id: id)
             liveEventViewerIncreaseManager.increaseLiveEventViewer(id: id, userId: userDefaults.userId)
-            liveEventUserInteractionManager.loadLiveEventUserInteraction(liveEventId: id, userId: userDefaults.userId, initialCall: true)
+            liveEventUserInteractionManager.loadLiveEventUserInteraction(liveEventId: id, userId: userDefaults.userId)
         }
         
         return controller
@@ -162,8 +161,7 @@ final class PlayerUIComposer {
         
         let videoLikeManagerOutput = VideoLikeManagerOutputHandler(
             controller: controller,
-            userId: userDefaults.userId,
-            videoUserInteractionManager: videoUserInteractionManager
+            userId: userDefaults.userId
         )
         
         let videoLikeManager = VideoLikeManagerFactory().makeManager(
@@ -189,7 +187,7 @@ final class PlayerUIComposer {
             videoStatsChangeManager.listenVideoStats(id: id)
             videoDetailManager.loadVideo(id: id)
             videoViewerIncreaseManager.increaseVideoViewer(id: id, userId: userDefaults.userId)
-            videoUserInteractionManager.loadVideoUserInteraction(videoId: id, userId: userDefaults.userId, initialCall: true)
+            videoUserInteractionManager.loadVideoUserInteraction(videoId: id, userId: userDefaults.userId)
         }
         
         return controller

@@ -17,16 +17,12 @@ extension PlayerVCView {
         totalViewerView.configure(viewModel: viewModel)
         likeView.configure(with: viewModel)
         chatView.configure(with: viewModel)
-        dummyComposerView.configure(with: viewModel)
+        composerView.configure(with: viewModel)
     }
     
     func updateStats(with viewModel: VideoViewModel) {
         totalViewerView.configure(viewModel: viewModel)
         likeView.configure(with: viewModel)
-    }
-    
-    func setUserInteraction(with viewModel: VideoUserInteractionViewModel, initialCall: Bool) {
-        likeView.configure(with: viewModel, initialCall: initialCall)
     }
 }
 
@@ -42,7 +38,7 @@ extension PlayerVCView {
         itemsView.configure(with: viewModel, imageLoader: imageLoader)
         
         chatView.configure(with: viewModel)
-        dummyComposerView.configure(with: viewModel)
+        composerView.configure(with: viewModel)
     }
     
     func updateStats(with viewModel: LiveEventViewModel) {
@@ -53,9 +49,11 @@ extension PlayerVCView {
     func updateLiveEventViewerCount(with viewModel: LiveEventViewerViewModel) {
         totalViewerView.configure(viewModel: viewModel)
     }
-    
-    func setUserInteraction(with viewModel: LiveEventUserInteractionViewModel, initialCall: Bool) {
-        likeView.configure(with: viewModel, initialCall: initialCall)
+}
+
+extension PlayerVCView {
+    func updateLikeStatus(with like: Bool, withAnimation: Bool) {
+        likeView.updateLikeStatus(with: like, withAnimation: withAnimation)
     }
 }
 
@@ -108,13 +106,13 @@ class PlayerVCView: _View {
         return view
     }()
     
-    private(set) lazy var dummyComposerViewContainer: UIView = {
+    private(set) lazy var composerViewContainer: UIView = {
         let view = UIView()
         return view
     }()
     
-    private(set) lazy var dummyComposerView: DummyComposerView = {
-        let view = Components.default.dummyComposerView.init()
+    private(set) lazy var composerView: ComposerView = {
+        let view = Components.default.composerView.init()
         return view
     }()
     
@@ -150,6 +148,7 @@ class PlayerVCView: _View {
         backgroundColor = .appColor(.appBlack)
         
         chatView.isHidden = true
+        composerView.isHidden = true
         
         bottomStackView.axis = .horizontal
         bottomStackView.spacing = 16
@@ -163,9 +162,9 @@ class PlayerVCView: _View {
     override func setUpLayout() {
         super.setUpLayout()
       
-        dummyComposerViewContainer.addSubview(dummyComposerView)
+        composerViewContainer.addSubview(composerView)
         
-        [itemsView, dummyComposerViewContainer].forEach {
+        [itemsView, composerViewContainer].forEach {
             bottomStackView.addArrangedSubview($0)
         }
         
@@ -184,7 +183,7 @@ class PlayerVCView: _View {
         
         bottomStackView.anchor(left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, leftConstant: 16, bottomConstant: 30, rightConstant: 16)
         
-        dummyComposerView.anchor(left: dummyComposerViewContainer.leftAnchor, bottom: dummyComposerViewContainer.bottomAnchor, right: dummyComposerViewContainer.rightAnchor)
+        composerView.anchor(left: composerViewContainer.leftAnchor, bottom: composerViewContainer.bottomAnchor, right: composerViewContainer.rightAnchor)
         
         statusView.anchor(left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, leftConstant: 16, bottomConstant: 120)
         

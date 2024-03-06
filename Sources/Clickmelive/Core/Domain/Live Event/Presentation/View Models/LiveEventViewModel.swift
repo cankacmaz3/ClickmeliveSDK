@@ -95,6 +95,8 @@ final class LiveEventViewModel {
             return LiveEventLocalization.shared.statusStreaming
         case .StreamEnded:
             return LiveEventLocalization.shared.statusStreamEnded
+        case .Cancelled:
+            return LiveEventLocalization.shared.statusCancelled
         }
     }
 }

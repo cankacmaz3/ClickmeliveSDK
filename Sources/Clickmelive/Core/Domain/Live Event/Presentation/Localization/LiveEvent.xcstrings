@@ -35,6 +35,23 @@
         }
       }
     },
+    "LiveEventStatusCancelled" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yayın İptal Edildi"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yayın İptal Edildi"
+          }
+        }
+      }
+    },
     "LiveEventStatusReadyToStream" : {
       "extractionState" : "manual",
       "localizations" : {

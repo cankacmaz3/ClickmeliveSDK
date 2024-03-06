@@ -127,6 +127,7 @@
 		366D0C232B95426F00A42E2B /* GraphQLVideoFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0C222B95426F00A42E2B /* GraphQLVideoFinder.swift */; };
 		368BDE742B97FCA5009D5129 /* ClickmeliveSaasAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 368BDE732B97FCA5009D5129 /* ClickmeliveSaasAPI */; };
 		368BDE792B97FD71009D5129 /* AmazonIVSPlayer.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368BDE782B97FD71009D5129 /* AmazonIVSPlayer.xcframework */; };
+		368BDE7F2B986E0C009D5129 /* ComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368BDE7E2B986E0C009D5129 /* ComposerView.swift */; };
 		3695F0382B935FFB003925F1 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F0372B935FFB003925F1 /* Apollo */; };
 		3695F03A2B935FFB003925F1 /* ApolloAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F0392B935FFB003925F1 /* ApolloAPI */; };
 		3695F03C2B935FFB003925F1 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 3695F03B2B935FFB003925F1 /* ApolloWebSocket */; };
@@ -185,7 +186,6 @@
 		36EDB62B2B96915800F30CAD /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB5AA2B95F93000F30CAD /* PlayerView.swift */; };
 		36EDB62C2B96915800F30CAD /* LikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB5A72B95F93000F30CAD /* LikeView.swift */; };
 		36EDB62D2B96915800F30CAD /* TotalViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB5AC2B95F93000F30CAD /* TotalViewerView.swift */; };
-		36EDB62E2B96915800F30CAD /* DummyComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB5A12B95F93000F30CAD /* DummyComposerView.swift */; };
 		36EDB62F2B96915800F30CAD /* MessageTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDB5A32B95F93000F30CAD /* MessageTextView.swift */; };
 		36EDB6302B96916500F30CAD /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BA02B94800100A42E2B /* AppColor.swift */; };
 		36EDB6312B96916500F30CAD /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D0BA22B94801000A42E2B /* AppImage.swift */; };
@@ -378,6 +378,7 @@
 		366D0C202B95421300A42E2B /* CMLVideosQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLVideosQuery.swift; sourceTree = "<group>"; };
 		366D0C222B95426F00A42E2B /* GraphQLVideoFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLVideoFinder.swift; sourceTree = "<group>"; };
 		368BDE782B97FD71009D5129 /* AmazonIVSPlayer.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AmazonIVSPlayer.xcframework; sourceTree = "<group>"; };
+		368BDE7E2B986E0C009D5129 /* ComposerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposerView.swift; sourceTree = "<group>"; };
 		3695F01F2B935DDD003925F1 /* Clickmelive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Clickmelive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3695F03D2B936027003925F1 /* CMLApolloClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLApolloClient.swift; sourceTree = "<group>"; };
 		3695F0402B936072003925F1 /* AuthorizationInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInterceptor.swift; sourceTree = "<group>"; };
@@ -392,7 +393,6 @@
 		36EDB5942B95F8FE00F30CAD /* Date+CoreExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+CoreExtensions.swift"; sourceTree = "<group>"; };
 		36EDB59B2B95F93000F30CAD /* PlayerUIComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerUIComposer.swift; sourceTree = "<group>"; };
 		36EDB59E2B95F93000F30CAD /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
-		36EDB5A12B95F93000F30CAD /* DummyComposerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyComposerView.swift; sourceTree = "<group>"; };
 		36EDB5A22B95F93000F30CAD /* ChatCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCellController.swift; sourceTree = "<group>"; };
 		36EDB5A32B95F93000F30CAD /* MessageTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTextView.swift; sourceTree = "<group>"; };
 		36EDB5A42B95F93000F30CAD /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -1220,8 +1220,8 @@
 		36EDB5A02B95F93000F30CAD /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				36EDB5A12B95F93000F30CAD /* DummyComposerView.swift */,
 				36EDB5A22B95F93000F30CAD /* ChatCellController.swift */,
+				368BDE7E2B986E0C009D5129 /* ComposerView.swift */,
 				36EDB5A32B95F93000F30CAD /* MessageTextView.swift */,
 				36EDB5A42B95F93000F30CAD /* ChatView.swift */,
 				36EDB5A52B95F93000F30CAD /* ChatCell.swift */,
@@ -1492,7 +1492,6 @@
 				366D0B242B938EA100A42E2B /* LiveEventUserInteraction.swift in Sources */,
 				36EDB6322B96916500F30CAD /* FontManager.swift in Sources */,
 				36EDB6162B96913400F30CAD /* UIColor+UIExtensions.swift in Sources */,
-				36EDB62E2B96915800F30CAD /* DummyComposerView.swift in Sources */,
 				362E0C442B97BD0C002BE25C /* VideoStatsChangeListener.swift in Sources */,
 				362E0C5C2B97BFDB002BE25C /* GraphQLVideoUserInteractionLoader.swift in Sources */,
 				3695F03E2B936027003925F1 /* CMLApolloClient.swift in Sources */,
@@ -1573,6 +1572,7 @@
 				366D0B1A2B9377F700A42E2B /* GetLiveEventByIdQueryMapper.swift in Sources */,
 				36EDB6132B96913400F30CAD /* NSLayoutConstraint+UIExtensions.swift in Sources */,
 				366D0C032B95270500A42E2B /* EventTagGQL+DomainConversion.swift in Sources */,
+				368BDE7F2B986E0C009D5129 /* ComposerView.swift in Sources */,
 				362E0C4E2B97BEC7002BE25C /* VideoViewerIncreaser.swift in Sources */,
 				366D0B3F2B93933B00A42E2B /* LiveEventUpdateListener.swift in Sources */,
 				36EDB60D2B96911D00F30CAD /* ImageLoader.swift in Sources */,

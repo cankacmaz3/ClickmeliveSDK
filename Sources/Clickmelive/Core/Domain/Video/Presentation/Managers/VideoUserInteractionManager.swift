@@ -8,7 +8,7 @@
 import Foundation
 
 protocol VideoUserInteractionManagerOutput {
-    func videoUserInteractionLoaded(videoUserInteraction: VideoUserInteraction, initialCall: Bool)
+    func videoUserInteractionLoaded(videoUserInteraction: VideoUserInteraction)
 }
 
 public final class VideoUserInteractionManager {
@@ -24,11 +24,11 @@ public final class VideoUserInteractionManager {
 }
 
 extension VideoUserInteractionManager {
-    func loadVideoUserInteraction(videoId: String, userId: String, initialCall: Bool) {
+    func loadVideoUserInteraction(videoId: String, userId: String) {
         videoUserInteractionLoader.load(videoId: videoId, userId: userId) { [weak self] result in
             switch result {
             case let .success(videoUserInteraction):
-                self?.output?.videoUserInteractionLoaded(videoUserInteraction: videoUserInteraction, initialCall: initialCall)
+                self?.output?.videoUserInteractionLoaded(videoUserInteraction: videoUserInteraction)
             case let .failure(error):
                 print(error.localizedDescription)
                 self?.failureOutput?.failed(error: error)

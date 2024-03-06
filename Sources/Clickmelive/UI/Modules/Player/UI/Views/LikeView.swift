@@ -14,10 +14,10 @@ extension LikeView {
     }
     
     // MARK: - Video Interaction
-    func configure(with viewModel: VideoUserInteractionViewModel, initialCall: Bool) {
-        self.like = viewModel.like
-        ivLike.image = .appImage(viewModel.like ? .iconLiked: .iconLike)
-        if !initialCall { animateLikeIcon() }
+    func updateLikeStatus(with like: Bool, withAnimation: Bool) {
+        self.like = like
+        ivLike.image = .appImage(like ? .iconLiked: .iconLike)
+        if withAnimation { animateLikeIcon() }
     }
 }
 

@@ -23,7 +23,7 @@ struct Components {
     var statusView: StatusView.Type = StatusView.self
     var chatView: ChatView.Type = ChatView.self
     var chatCell: ChatCell.Type = ChatCell.self
-    var dummyComposerView: DummyComposerView.Type = DummyComposerView.self
+    var composerView: ComposerView.Type = ComposerView.self
     var autoSizingTextView: AutoSizingTextView.Type = AutoSizingTextView.self
     var messageTextView: MessageTextView.Type = MessageTextView.self
 }

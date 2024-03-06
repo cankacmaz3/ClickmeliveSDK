@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LiveEventLikeManagerOutput {
-    func isLiveEventLiked(liveEvent: LiveEvent)
+    func isLiveEventLiked(liveEvent: LiveEvent, like: Bool)
 }
 
 final class LiveEventLikeManager {
@@ -28,7 +28,7 @@ extension LiveEventLikeManager {
         liveEventLiker.like(liveEventId: liveEventId, userId: userId, like: like) { [weak self] result in
             switch result {
             case let .success(liveEvent):
-                self?.output?.isLiveEventLiked(liveEvent: liveEvent)
+                self?.output?.isLiveEventLiked(liveEvent: liveEvent, like: like)
             case let .failure(error):
                 self?.failureOutput?.failed(error: error)
             }

@@ -49,9 +49,8 @@ extension PlayerUIComposer {
             self.controller = controller
         }
         
-        func liveEventUserInteractionLoaded(liveEventUserInteraction: LiveEventUserInteraction, initialCall: Bool) {
-            let liveEventUserInteractionViewModel = LiveEventUserInteractionViewModel(model: liveEventUserInteraction)
-            controller?.setUserInteraction(with: liveEventUserInteractionViewModel, initialCall: initialCall)
+        func liveEventUserInteractionLoaded(liveEventUserInteraction: LiveEventUserInteraction) {
+            controller?.updateLikeStatus(with: liveEventUserInteraction.like, withAnimation: false)
         }
     }
 }
@@ -61,18 +60,15 @@ extension PlayerUIComposer {
         
         private weak var controller: PlayerViewController?
         private let userId: String
-        private let liveEventUserInteractionManager: LiveEventUserInteractionManager
         
         init(controller: PlayerViewController,
-             userId: String,
-             liveEventUserInteractionManager: LiveEventUserInteractionManager) {
+             userId: String) {
             self.controller = controller
             self.userId = userId
-            self.liveEventUserInteractionManager = liveEventUserInteractionManager
         }
         
-        func isLiveEventLiked(liveEvent: LiveEvent) {
-            liveEventUserInteractionManager.loadLiveEventUserInteraction(liveEventId: liveEvent.id, userId: userId, initialCall: false)
+        func isLiveEventLiked(liveEvent: LiveEvent, like: Bool) {
+            controller?.updateLikeStatus(with: like, withAnimation: true)
         }
     }
 }

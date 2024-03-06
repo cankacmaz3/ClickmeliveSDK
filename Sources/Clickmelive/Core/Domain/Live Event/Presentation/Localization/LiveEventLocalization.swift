@@ -67,4 +67,12 @@ final class LiveEventLocalization {
             bundle: bundle,
             comment: "Title for streaming status")
     }
+    
+    var statusCancelled: String {
+        NSLocalizedString(
+            "LiveEventStatusCancelled",
+            tableName: table,
+            bundle: bundle,
+            comment: "Title for cancelled status")
+    }
 }

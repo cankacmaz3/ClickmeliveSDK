@@ -12,6 +12,7 @@ public enum LiveEventStatus: String {
     case ReadyToStream
     case Streaming
     case StreamEnded
+    case Cancelled
     
     static func getLiveEventStatus(from: Int?) -> LiveEventStatus {
         switch from {
@@ -25,6 +26,8 @@ public enum LiveEventStatus: String {
             return .Streaming
         case 4:
             return .StreamEnded
+        case 5:
+            return .Cancelled
         default:
             return .None
         }

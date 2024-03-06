@@ -52,9 +52,8 @@ extension PlayerUIComposer {
             self.controller = controller
         }
         
-        func videoUserInteractionLoaded(videoUserInteraction: VideoUserInteraction, initialCall: Bool) {
-            let videoUserInteractionViewModel = VideoUserInteractionViewModel(model: videoUserInteraction)
-            controller?.setUserInteraction(with: videoUserInteractionViewModel, initialCall: initialCall)
+        func videoUserInteractionLoaded(videoUserInteraction: VideoUserInteraction) {
+            controller?.updateLikeStatus(with: videoUserInteraction.like, withAnimation: false)
         }
     }
 }
@@ -64,18 +63,16 @@ extension PlayerUIComposer {
         
         private weak var controller: PlayerViewController?
         private let userId: String
-        private let videoUserInteractionManager: VideoUserInteractionManager
-        
+       
         init(controller: PlayerViewController,
-             userId: String,
-             videoUserInteractionManager: VideoUserInteractionManager) {
+             userId: String) {
             self.controller = controller
             self.userId = userId
-            self.videoUserInteractionManager = videoUserInteractionManager
+           
         }
         
-        func isVideoLiked(video: Video) {
-            videoUserInteractionManager.loadVideoUserInteraction(videoId: video.id, userId: userId, initialCall: false)
+        func isVideoLiked(video: Video, like: Bool) {
+            controller?.updateLikeStatus(with: like, withAnimation: true)
         }
     }
 }

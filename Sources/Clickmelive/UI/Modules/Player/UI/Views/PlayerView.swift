@@ -18,7 +18,7 @@ private extension LiveEventViewModel {
                 return teaserUrl
             case .Streaming:
                 return playbackUrl
-            case .StreamEnded, .ReadyToStream, .None:
+            case .StreamEnded, .ReadyToStream, .Cancelled, .None:
                 return nil
             }
         }
@@ -139,6 +139,7 @@ extension PlayerView {
         clearPlayers()
         updatePositionDisplay()
         loadLiveStream(from: url)
+        seekSlider.isHidden = true
         startLivePlayback()
     }
     
@@ -146,6 +147,7 @@ extension PlayerView {
         clearPlayers()
         updatePositionDisplay()
         loadVideoStream(from: url)
+        seekSlider.isHidden = false
         startVideoPlayback()
     }
     

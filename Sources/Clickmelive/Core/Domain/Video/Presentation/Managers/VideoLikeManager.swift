@@ -8,7 +8,7 @@
 import Foundation
 
 protocol VideoLikeManagerOutput {
-    func isVideoLiked(video: Video)
+    func isVideoLiked(video: Video, like: Bool)
 }
 
 final class VideoLikeManager {
@@ -28,7 +28,7 @@ extension VideoLikeManager {
         videoLiker.like(videoId: videoId, userId: userId, like: like) { [weak self] result in
             switch result {
             case let .success(video):
-                self?.output?.isVideoLiked(video: video)
+                self?.output?.isVideoLiked(video: video, like: like)
             case let .failure(error):
                 self?.failureOutput?.failed(error: error)
             }

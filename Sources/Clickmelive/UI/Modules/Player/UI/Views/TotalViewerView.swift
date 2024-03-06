@@ -14,7 +14,7 @@ private extension LiveEventViewModel {
         }
 
         switch status {
-        case .Created, .Teaser, .ReadyToStream, .None:
+        case .Created, .Teaser, .ReadyToStream, .Cancelled, .None:
             return .appColor(.appDimmedBackground)
         case .Streaming, .StreamEnded:
             return .appColor(.appRed)

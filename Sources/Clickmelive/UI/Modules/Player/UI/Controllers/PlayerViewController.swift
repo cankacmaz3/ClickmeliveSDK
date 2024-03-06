@@ -63,6 +63,12 @@ final class PlayerViewController: UIViewController {
     }
 }
 
+extension PlayerViewController {
+    func updateLikeStatus(with like: Bool, withAnimation: Bool) {
+        playerVCView.updateLikeStatus(with: like, withAnimation: withAnimation)
+    }
+}
+
 // MARK: - Video management
 extension PlayerViewController {
     func setVideoDetail(with viewModel: VideoViewModel, imageLoader: ImageLoader) {
@@ -74,12 +80,6 @@ extension PlayerViewController {
     }
 }
 
-extension PlayerViewController {
-    func setUserInteraction(with viewModel: VideoUserInteractionViewModel, initialCall: Bool) {
-        playerVCView.setUserInteraction(with: viewModel, initialCall: initialCall)
-    }
-}
-
 // MARK: - Live Event Management
 extension PlayerViewController {
     func setLiveEventDetail(with viewModel: LiveEventViewModel, imageLoader: ImageLoader) {
@@ -88,12 +88,6 @@ extension PlayerViewController {
     
     func updateStats(with viewModel: LiveEventViewModel) {
         playerVCView.updateStats(with: viewModel)
-    }
-}
-
-extension PlayerViewController {
-    func setUserInteraction(with viewModel: LiveEventUserInteractionViewModel, initialCall: Bool) {
-        playerVCView.setUserInteraction(with: viewModel, initialCall: initialCall)
     }
 }
 
@@ -159,7 +153,7 @@ extension PlayerViewController {
         playerVCView.likeView.onLikeTapped = output?.likeTapped
         
         let composeGesture = UITapGestureRecognizer(target: self, action: #selector(composeTapped))
-        playerVCView.dummyComposerView.composeView.addGestureRecognizer(composeGesture)
+        playerVCView.composerView.composerContainer.addGestureRecognizer(composeGesture)
         
         viewTapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         
@@ -167,15 +161,15 @@ extension PlayerViewController {
             playerVCView.addGestureRecognizer(tapGesture)
         }
         
-        playerVCView.dummyComposerView.btnSendMessage.addTarget(self, action: #selector(messageSendTapped), for: .touchUpInside)
+        playerVCView.composerView.btnSendMessage.addTarget(self, action: #selector(messageSendTapped), for: .touchUpInside)
         
         playerVCView.tvMessage.onSendMessage = { [weak self] message in
             self?.output?.messageSendTapped(message: message)
         }
         
         playerVCView.tvMessage.onMessageTextChange = { [weak self] message in
-            self?.playerVCView.dummyComposerView.lblStartTyping.text = message.isEmpty ? "Yazmaya başla...": message
-            self?.playerVCView.dummyComposerView.setSendButtonState(isEnabled: !message.isEmpty)
+            self?.playerVCView.composerView.lblStartTyping.text = message.isEmpty ? "Yazmaya başla...": message
+            self?.playerVCView.composerView.setSendButtonState(isEnabled: !message.isEmpty)
         }
         
         playerVCView.btnMinimize.addTarget(self, action: #selector(minimizeTapped), for: .touchUpInside)
@@ -186,6 +180,8 @@ extension PlayerViewController {
             self?.startLiveEventViewerCountTimer():
             self?.stopLiveEventViewerCountTimer()
         }
+        
+        playerVCView.composerView.btnChatVisibility.addTarget(self, action: #selector(chatVisibilityTapped), for: .touchUpInside)
     }
     
     @objc private func itemsTapped() {
@@ -194,6 +190,10 @@ extension PlayerViewController {
     
     @objc private func composeTapped() {
         playerVCView.tvMessage.autoSizingTextView.becomeFirstResponder()
+    }
+    
+    @objc private func chatVisibilityTapped() {
+        playerVCView.chatView.isHidden.toggle()
     }
     
     @objc func dismissKeyboard(_ gesture: UITapGestureRecognizer) {
