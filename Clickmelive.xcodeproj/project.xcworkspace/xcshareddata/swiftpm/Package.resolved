@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "clickmelivesaasapi",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/clickmelive/ClickmeliveSaasAPI",
+      "state" : {
+        "branch" : "main",
+        "revision" : "dfa8c8f8bd331a7185f16f02beeda6bb876797ee"
+      }
+    },
+    {
       "identity" : "sdwebimage",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SDWebImage/SDWebImage.git",
